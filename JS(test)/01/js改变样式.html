@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>开灯</title>
+	</head>
+	<body>
+		<img src="img/pic_bulboff.gif">
+		<button type="button" onclick="on()">开灯</button>
+		<script type="text/javascript">
+			var image = document.querySelector("img")
+			var btn = document.querySelector("button")
+
+			function on() {
+				if (image.src.match("bulbon")) {
+					image.src = "img/pic_bulboff.gif"
+					btn.innerHTML = "开灯"
+				} else {
+					image.src = "img/pic_bulbon.gif"
+					btn.innerHTML = "关灯"
+				}
+			}
+		</script>
+	</body>
+</html>

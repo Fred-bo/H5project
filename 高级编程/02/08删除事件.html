@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<button class="one">传统注册方式</button>
+		<button class="two">方法监听方式</button>
+		
+		<script type="text/javascript">
+			
+			let oneBtn = document.querySelector(".one");
+			oneBtn.onclick = function() {
+				console.log("aaa");
+			}
+			oneBtn.onclick = null; //传统方式删除事件，直接赋值为null即可
+			
+			
+			
+			let twoBtn = document.querySelector(".two");
+			let show = function(){
+				console.log(1111)
+			}
+			twoBtn.addEventListener("click", show)
+			twoBtn.addEventListener("click", function(){
+				console.log(222)
+			})
+			twoBtn.removeEventListener("click", show); //方法监听模式删除事件，需要删除同一个事件函数
+		</script>
+	</body>
+</html>

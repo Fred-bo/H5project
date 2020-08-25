@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			function runAsync() {
+			 var p= new Promise(function(resolve,reject) {		 	
+			 
+				 setTimeout(function(){
+					 console.log("执行完成");
+					 resolve("回调想要获得的数据");
+				 },2000);				
+				})
+				return p;
+			}
+			
+			runAsync().then(function(data) {
+				console.log(data);
+			})
+		</script>
+	</body>
+</html>

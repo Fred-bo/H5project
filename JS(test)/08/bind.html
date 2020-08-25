@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			var obj = {
+				name:"小明"
+			};
+			function getSum(a,b) {
+				console.log(this,this.name)
+				console.log(a,b)
+				return a+b;
+			}
+			var sum2 = getSum.bind(obj)(11,22);
+			console.log(sum2)
+		</script>
+	</body>
+</html>

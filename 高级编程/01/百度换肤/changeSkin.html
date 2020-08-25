@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			li{
+				list-style: none;
+				display: inline-block;
+			}
+			li img{
+				width: 120px;
+				height: 100px;
+			}
+			.upimg{
+				width: 400px;
+				height: 400px;
+				display: block;
+				margin:20px auto;
+			}
+			ul{
+				margin: 20px 470px;
+			}
+		</style>
+	</head>
+	<body>
+		<img class="upimg" src="./img/01.jpg" >
+		
+		<div>
+			<ul>
+				<li><img src="img/01.jpg" alt=""></li>
+				<li><img src="img/02.jpg" alt=""></li>
+				<li><img src="img/03.jpg" alt=""></li>
+				<li><img src="img/04.jpg" alt=""></li>
+			</ul>
+		</div>
+		<script type="text/javascript">
+			let upimg=document.getElementsByClassName("upimg")[0];
+			let arrImg=document.querySelectorAll("li img")
+			for(let i=0;i<arrImg.length;i++){
+				arrImg[i].onclick=function(){
+					upimg.src=this.src;
+					for(let j=0;j<arrImg.length;j++){
+						arrImg[j].style.border="none"
+					}
+					this.style.border="1px solid blue";
+				}
+				
+			}		
+		</script>
+	</body>
+</html>

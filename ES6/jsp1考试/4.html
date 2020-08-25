@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			function f1 (str){
+				var num=0;
+				for(let i=0;i<str.length;i++) {
+					if(str[i]=="a") {
+						str.slice(i,2);
+						num++;
+						document.write(`在${i+1}位置上<br/>`)
+					}		
+				}
+				document.write(`出现了${num}次`)
+			}
+			f1("abcabcabcabcabcacbacbca")
+		</script>
+	</body>
+</html>

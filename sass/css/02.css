@@ -1,0 +1,5 @@
+.box .two {
+  color: #80b4d1; }
+
+.box:hover .two {
+  color: red; }

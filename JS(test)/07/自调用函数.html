@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			//匿名函数自调用,末尾一定要加分号;
+			(function(){
+				console.log("我调我自己")
+			})();
+			
+			//匿名函数自调用传参
+			(function(a,b){
+				console.log(a*b)
+			})(6,6);
+			
+			//匿名函数自调用返回数据
+			var res = (function(){
+				return "我要返回舞台"
+			})();
+			console.log(res);
+		</script>
+	</body>
+</html>

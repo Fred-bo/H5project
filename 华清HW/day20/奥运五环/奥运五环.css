@@ -1,0 +1,50 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+.all {
+	width: 800px;
+	height: 480px;
+	/* background-color: lightblue; */
+	position: relative;
+	left: 50%;
+	margin-left: -400px;
+	top: 150px;
+}
+div {
+	width: 200px;
+	height: 200px;
+}
+
+.red {
+	border: 20px solid red;
+	border-radius:50%;
+	position: absolute;
+	left: 0;
+}
+.green {
+	border: 20px solid green;
+	border-radius:50%;
+	position: absolute;
+	left: 265px;
+}
+.yellow {
+	border: 20px solid yellow;
+	border-radius:50%;
+	position: absolute;
+	left: 530px;
+}
+.blue {
+	border: 20px solid blue;
+	border-radius:50%;
+	position: absolute;
+	left: 130px;
+	top: 120px;
+}
+.purple {
+	border: 20px solid purple;
+	border-radius:50%;
+	position: absolute;
+	left: 400px;
+	top: 120px;
+}

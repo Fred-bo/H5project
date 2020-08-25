@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			p{
+				display: block;
+				padding-left:24px ;
+			}
+			.success{		
+				background: url(./img/success.png) no-repeat;
+				background-size: 20px 20px;
+			}
+			.wrong{
+				background: url(./img/fail.png) no-repeat;
+				background-size: 20px 20px;
+			}
+		</style>
+	</head>
+	<body>
+		<input type="text" name="" id="" value="" />
+		<p></p>
+		<script type="text/javascript">
+			let input=document.querySelector("input")
+			let p=document.querySelector("p")
+			input.onblur=function(){
+			let reg=/^[A-z]\w{5,7}$/
+			if(input.value.match(reg)){
+				p.className="success";
+				p.innerHTML="恭喜，该邮件地址可以注册"
+			}else{
+				p.className="wrong";
+				p.innerHTML="长度应为6~18个字符"
+			}
+			}
+		</script>
+	</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			var str = window.prompt("请输入");
+
+			function f1() {
+				for (var i = 0; i < str.length; i++) {
+					if (str[i] == "草") {
+						document.write(`敏感字"草"在${i+1}位置被发现<br/>`)
+					}
+				}
+				return str.indexOf("草");//如果没有改该字符,此方法返回值为-1;
+			}
+			var a=f1();
+			if(a==-1){
+				document.write("没有敏感字")
+			}else{			
+				document.write(`第一次出现"草"在${a+1}位置出现`) ;	
+			}
+			
+		</script>
+	</body>
+</html>

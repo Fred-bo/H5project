@@ -1,0 +1,57 @@
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>array</title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			function f1() {
+				var arr=new Array()//动态数组创建
+				console.log(arr)
+				console.log(arr.length)
+				
+				arr[0]=100;
+				arr[3]=200;
+				arr[45]=10;
+				console.log(arr.length,arr)
+				console.log(arr[1])//数组角标为1没有赋值,所以为空
+			}
+			f1()
+			
+			//静态初始化:声明数组和初始化一句代码执行
+			//可以存在空元素,如果末尾有多个空元素,会丢掉最后一个
+			function f2() {
+				var arr1=[1,2,,,,3,,]
+				console.log(arr1.length)
+			}
+			f2()
+			
+			function f3(){//如果一个数组内的某个数出现过,这组数组下一个相同的数就会引用之前那个相同的某个数的地址
+				var arr=[10,10,20,30]
+				console.log(arr[0]==arr[1])
+				console.log(arr[0]===arr[1])
+				console.log(arr[0]===arr[2])
+				console.log(arr[0]===arr[2])
+				var arr1=[[10,20],[10,20],[20,30]]
+				console.log(arr1[0][0]==arr1[1][0]);
+				console.log(arr1[0][1]===arr1[2][0]);
+			}
+			f3()
+			
+			function f4() {
+				var arr1=[1,2,5,6,7,8]
+				var a= arr1.join("-")
+				console.log(a)
+			}
+			f4()
+			function f5() {
+				var arr1="hello world 你好 世界"
+				var a=arr1.split(" ")
+				console.log(a)
+			}
+			f5()
+		</script>
+	</body>
+</html>

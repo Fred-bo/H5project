@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>object</title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			function f1() {
+				var a = {
+					name: "小明",
+					age: 18,					
+				}
+				console.log(a.name,a.age)
+				console.log(a["name"],a["age"])
+			}
+			f1()
+			
+			function f2() {
+				var province=[
+					{
+						name:"四川省",
+						pid:51,
+						city:[
+							{
+								name:"成都",
+								cid:5101
+							},
+							{
+								name:"内江市",
+								cid:51110
+							}
+						]
+					}
+				]	
+				console.log(province[0].name[0].name)
+			}
+			f2()
+		</script>
+	</body>
+</html>

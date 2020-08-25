@@ -1,0 +1,62 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
+footer {
+	position: relative;
+	height: 20px;
+	background-color: black;
+	top: 500px;
+}
+
+.ball {
+	width: 100px;
+	height: 100px;
+	margin-left: 10px;
+	background-color: #B5F2A6;
+	border-radius: 50px;
+	position: absolute;
+	top: 400px;
+	animation-name: myball;
+	animation-duration: 3s;
+	animation-direction: alternate;
+	animation-iteration-count: 1;
+	animation-timing-function: ease-in;
+	animation-fill-mode:none ;
+}
+
+@keyframes myball {
+
+	0% {
+		top: 50px	
+	}
+	25% {
+		top: 400px;
+		background: #008000;
+	}
+	50%{
+		top: 150px;
+		background: #35A74F;
+	}
+	68%{
+		top:400px ;
+		background: #90EE90;
+	}
+	76%{
+		top: 260px;
+		background: #B5F2A6;
+	}
+	85%{
+		top:400px ;
+		background: #F0F8FF;
+	}
+	92%{
+		top: 360px;
+		background: #FFFFFF;
+	}
+
+	100% {
+		top: 400px;
+	}
+}

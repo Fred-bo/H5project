@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		
+	</head>
+	<body>
+		<script type="text/javascript">
+			for(let i=0;i<5;i++){
+				(function(j){
+					setTimeout(()=>{
+						console.log(j)
+					},j*1000)
+				})(i)
+			}
+		</script>
+	</body>
+</html>

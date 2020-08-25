@@ -1,0 +1,29 @@
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			//类中定义的属性必须放在constructor中
+			class Person {
+				//创建对象new时调用
+				constructor(){
+					this.a=100;
+					console.log(this.a);
+				}
+				say() {
+					console.log("hello")
+				}
+				static walk() {//定义静态方法
+					console.log("walk")
+				}
+			}
+			let p=new Person();
+			p.say();//对象.原型方法
+			Person.walk();//类名.静态方法
+		</script>
+	</body>
+</html>

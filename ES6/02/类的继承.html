@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<!-- <script type="text/javascript">
+			function Animal(name) {
+				this.name=name;
+				this.say=function(word) {
+					console.log(this.name+"说了"+word)
+				}
+			}
+			let a=new Animal("哈士奇");
+			a.say("呜呜呜")
+		</script> -->
+		
+		<script type="text/javascript">
+			class Person{
+				constructor() {
+				    this.type="人类"
+				}
+				say() {
+					console.log("say...")
+				}
+			}
+			
+			class Stu extends Person {
+				constructor(name) {
+					super();//调用父类构造函数
+					
+					this.name = name
+				}
+				
+			}
+			
+			let stu = new Stu("小明");
+			console.log(stu.name);
+			console.log(stu.type);
+			stu.say();
+		</script>
+		
+	</body>
+</html>

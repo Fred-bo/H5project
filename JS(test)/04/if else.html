@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			/* var sum=0;
+			function f1() {
+				for(var i=0;i<10;i++){
+					if(i%2==0){
+						console.log(i);
+						// console.log("=====");
+					}
+						// console.log(sum+=i)
+				}
+			}
+			f1(); */
+			document.onkeyup = function(e) {
+				console.log(e.keyCode);
+				switch (e.keyCode) {
+					case 37:
+						console.log("向左走");
+						break;
+					case 38:
+						console.log("向上走");
+						break;
+					default:
+						console.log("其他");
+						break;
+				}
+			}
+		</script>
+	</body>
+</html>

@@ -1,0 +1,99 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+body {
+	background: plum;
+}
+div {
+  width: 400px;
+  height: 400px;
+  margin: 200px auto;
+  /* background: #ccc; */
+  position: relative;
+  background: pink;
+}
+
+ul {
+  list-style: none;
+  position: absolute;
+  transform-origin: 200px 200px -200px;
+  transform-style: preserve-3d;
+  position: absolute;
+  /* transform: rotateX(45deg) rotateY(-45deg); */
+  animation: Arli 2s infinite;
+}
+ul:hover {
+  animation-play-state: paused;
+}
+
+li {
+  display: inline-block;
+  width: 400px;
+  height: 400px;
+  background: pink;
+  box-sizing: border-box;
+  position: absolute;
+  /* 透明度 */
+  opacity: 0.7;
+}
+
+li:nth-of-type(1) {
+  background: url(../img2/fox_1.JPG) no-repeat;
+  background-size: cover;
+  left: 0;
+  top: 0;
+}
+li:nth-of-type(2) {
+  background: url(../img2/fox_2.JPG) no-repeat;
+  background-size: cover;
+  left: -400px;
+  top: 0;
+  transform-origin: right;
+  transform: rotateY(-90deg);
+}
+li:nth-of-type(3) {
+  background: url(../img2/fox_3.JPG) no-repeat;
+  background-size: cover;
+  left: 0;
+  top: 0;
+  transform: rotateY(-180deg);
+  transform: translateZ(-400px);
+}
+li:nth-of-type(4) {
+  background: url(../img2/fox_4.JPG) no-repeat;
+  background-size: cover;
+  left: 400px;
+  top: 0;
+  transform-origin: left;
+  transform: rotateY(90deg);
+}
+li:nth-of-type(5) {
+  background: url(../img2/fox_5.JPG) no-repeat;
+  background-size: cover;
+  left: 0;
+  top: -400px;
+  transform-origin: bottom;
+  /* transform: translateY(200px); */
+  transform: rotateX(90deg);
+}
+li:nth-of-type(6) {
+  background: url(../img2/fox_6.JPG) no-repeat;
+  background-size: cover;
+  left: 0;
+  top: 400px;
+  transform-origin: top;
+  /* transform: translateY(-200px); */
+  transform: rotateX(-90deg);
+}
+@keyframes Arli {
+  0% {
+    transform: rotateX(0deg) rotateY(0deg);
+  }
+  /* 50% {
+    transform: rotateX(180deg) rotateY(0deg);
+  } */
+  100% {
+    transform: rotateX(1turn) rotateY(360deg);
+  }
+}

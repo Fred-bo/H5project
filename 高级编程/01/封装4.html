@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<div >
+			<ul class="box">
+				<li></li>
+				<li></li>
+				<li></li>
+				<li class="target"></li>
+				<li></li>
+				<li></li>
+			</ul>
+		</div>
+		<!-- 自己封装hasChildren()方法，不可用children属性 -->
+		<script type="text/javascript">
+			function hasChildren(father,target){
+				let list=father.childNodes;
+				
+				let has=false;
+				for(let i=0;i<list.length;i++){
+					if(list[i].nodeType===1 && list[i]===target){
+						has = true;
+						break;
+					}else{
+						has = false
+					}
+				}
+				return has;
+			}
+			let father = document.querySelector(".box")
+			let target = document.querySelector(".target")
+			console.log(hasChildren(father,target)) 
+		</script>
+	</body>
+</html>

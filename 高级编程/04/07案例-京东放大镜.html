@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			.box {
+				width: 400px;
+				height: 400px;
+				position: relative;
+				left: 200px;
+				top: 150px;
+			}
+			img {
+				width: 400px;
+				height: 400px;
+			}
+			.mask {
+				width: 200px;
+				height: 200px;
+				position: absolute;
+				left: 0;
+				top: 0;
+				background-color: rgba(255, 255, 0, .5);
+				display: none;
+			}
+			.big {
+				width: 600px;
+				height: 600px;
+				position: absolute;
+				left: 405px;
+				top: 0;
+				border: 1px solid red;
+				display: none;
+				background-image: url(https://img14.360buyimg.com/n0/jfs/t1/147663/4/4518/298574/5f293195Eb60acb1c/3ef429d6619ca297.jpg);
+				background-size: 1000px 1000px;
+				background-repeat: no-repeat;
+			}
+		</style>
+	</head>
+	<body>
+		
+		<div class="box">
+			<img src="https://img14.360buyimg.com/n0/jfs/t1/147663/4/4518/298574/5f293195Eb60acb1c/3ef429d6619ca297.jpg" alt="">
+			<div class="mask"></div> <!-- 遮罩层 -->
+			<div class="big"></div> <!-- 放大镜 -->
+		</div>
+		
+		<script type="text/javascript">
+			
+			window.onload = function() {
+				
+				let box = document.querySelector(".box");
+				let mask = document.querySelector(".mask");
+				let big = document.querySelector(".big");
+				let rect = box.getBoundingClientRect();
+				
+				function move(e) {
+					// 求遮罩层mask相对父元素box移动的距离
+					let y = e.pageY - mask.offsetHeight/2 - rect.top;
+					let x = e.pageX - mask.offsetWidth/2 - rect.left;
+					
+					// 处理左右边界
+					if(x <= 0){
+						x = 0;
+					} else if(x >= 200) {
+						x = 200
+					}
+					
+					// 处理上下边界
+					if(y <= 0) {
+						y = 0;
+					} else if(y >= 200) {
+						y = 200;
+					}
+					
+					// 让遮罩层移动left与top
+					mask.style.left = x + "px";
+					mask.style.top = y + "px";
+					
+					// 按照比例移动放大的图片
+					big.style.backgroundPosition = `${-2*x}px ${-2*y}px`;
+				}
+				
+				// 对box设置鼠标移动事件
+				box.addEventListener("mousemove", move)
+				
+				// 鼠标经过父盒子,显示遮罩层和放大镜
+				box.addEventListener("mouseenter", function() {
+					mask.style.display = "block";
+					big.style.display = "block";
+				});
+				
+				// 鼠标离开父盒子,隐藏遮罩层和放大镜
+				box.addEventListener("mouseleave", function() {
+					mask.style.display = "none";
+					big.style.display = "none";
+				})
+				
+			
+			}
+			
+			
+		</script>
+		
+	</body>
+</html>

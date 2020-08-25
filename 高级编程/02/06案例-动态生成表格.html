@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			table,
+			td,
+			th {
+				border: 1px solid #000;
+				border-collapse: collapse;
+				border: none;
+			}
+
+			th,
+			td {
+				padding: 10px 30px;
+			}
+			
+			img {
+				width: 100px;
+				height: 100px;
+			}
+		</style>
+
+	</head>
+	<body>
+
+		<table>
+			<thead>
+				<tr>
+					<th>序号</th>
+					<th>头像</th>
+					<th>名字</th>
+					<th>性别</th>
+					<th>地址</th>
+					<th>电话</th>
+				</tr>
+			</thead>
+			<tbody>
+
+			</tbody>
+		</table>
+
+
+		<script type="text/javascript">
+			let stuList = [{
+					id: 1,
+					photo: "https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=3331896339,146603059&fm=26&gp=0.jpg",
+					name: "小明",
+					sex: "男",
+					address: "成都",
+					tell: "10086"
+				},
+				{
+					id: 2,
+					photo: "https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=2141623099,2896788564&fm=26&gp=0.jpg",
+					name: "张三",
+					sex: "男",
+					address: "绵阳",
+					tell: "10010"
+				},
+				{
+					id: 3,
+					photo: "https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=1675952576,3103805455&fm=26&gp=0.jpg",
+					name: "李四",
+					sex: "女",
+					address: "内江",
+					tell: "10000"
+				},
+				{
+					id: 4,
+					photo: "https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=1462597699,2457940300&fm=26&gp=0.jpg",
+					name: "王五",
+					sex: "女",
+					address: "昆明",
+					tell: "10011"
+				}
+			]
+			
+			// 遍历stuList数组,依次创建tr表格行
+			for(let i = 0; i < stuList.length; i++) {
+				let tr = document.createElement("tr");
+				
+				// 遍历数组中的对象,取出键值对,依次创建单元格td
+				for(let key in stuList[i]) {
+					let td = document.createElement("td");
+					
+					if(key === "address") { //如果是地址，那么要创建超链接标签a
+						let a = document.createElement("a");
+						a.href = "#";
+						a.innerHTML = stuList[i][key];
+						td.appendChild(a);
+					} else if(key === "photo") { //如果是头像，那么要创建图像标签
+						let img = document.createElement("img");
+						img.src = stuList[i][key];
+						td.appendChild(img);
+					} else {
+						td.innerHTML = stuList[i][key];
+					}
+					tr.appendChild(td);
+				}
+				
+				document.querySelector("tbody").appendChild(tr);
+			}
+			
+			
+		</script>
+
+	</body>
+</html>

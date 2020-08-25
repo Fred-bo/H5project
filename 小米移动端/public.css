@@ -1,0 +1,41 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    text-decoration: none;
+}
+
+li {
+    list-style: none;
+}
+
+html {
+    font-size: calc(100vw*100/750);
+}
+
+body {
+    font-size: 0.24rem;
+}
+
+html {
+    overflow: hidden;
+    height: 100%;
+}
+
+body {
+    overflow: auto;
+    height: 100%;
+}
+
+.bottom-nav {
+    display: flex;
+    width: 375px;
+    position: fixed;
+    bottom: -0.1rem;
+}
+
+.bottom-nav img {
+    width: 1.5rem;
+}

@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<canvas id="canvas" width="800px" height="800px"></canvas>
+		<script type="text/javascript">
+			var canvas = document.querySelector("#canvas")
+			var ctx = canvas.getContext("2d")
+			//自定义y轴
+			ctx.moveTo(10, 850);
+			ctx.lineTo(10, 10)
+			ctx.lineTo(5, 20)
+			ctx.moveTo(10, 10)
+			ctx.lineTo(15, 20)
+
+			//自定义x轴
+			ctx.moveTo(0, 540)
+			ctx.lineTo(550, 540)
+			ctx.lineTo(540, 535)
+			ctx.moveTo(550, 540)
+			ctx.lineTo(540, 545)
+			ctx.stroke()
+			var data = [{
+					title: "1月",
+					value: 2
+				}, {
+					title: "2月",
+					value: 11
+				},
+				{
+					title: "3月",
+					value:	19
+				},
+				{
+					title: "4月",
+					value: 25
+				},
+				{
+					title: "5月",
+					value: 26
+				},
+				{
+					title: "6月",
+					value: 28
+				},
+				{
+					title: "7月",
+					value: 30
+				},
+				{
+					title: "8月",
+					value: 44
+				},
+				{
+					title: "9月",
+					value: 33
+				},
+				{
+					title: "10月",
+					value: 15
+				},
+				{
+					title: "11月",
+					value: 0
+				},
+				{
+					title: "12月",
+					value: -20
+				}
+			]
+			var data2=[
+				{month:"1月"},
+				{month:"2月"},
+				{month:"3月"},
+				{month:"4月"},
+				{month:"5月"},
+				{month:"6月"},
+				{month:"7月"},
+				{month:"8月"},
+				{month:"9月"},
+				{month:"10月"},
+				{month:"11月"},
+				{month:"12月"}
+			]
+			var data3=[
+				{tem:"2℃"},
+				{tem:"11℃"},
+				{tem:"19℃"},
+				{tem:"25℃"},
+				{tem:"26℃"},
+				{tem:"28℃"},
+				{tem:"30℃"},
+				{tem:"44℃"},
+				{tem:"33℃"},
+				{tem:"15℃"},
+				{tem:"0℃"},
+				{tem:"-20℃"}
+			]
+			ctx.beginPath();
+			var m=530/50;
+			var n=540;
+			var xm=540/data.length;
+			var y=n-data[0].value*m
+			
+			data.forEach((e,index)=>{
+				ctx.lineTo(10+index*xm,n-e.value*m)
+				ctx.fillText(data2[index].month,index*xm,550)
+				ctx.fillText(data3[index].tem,15,n-e.value*m)
+			})
+			
+			ctx.stroke()
+		</script>
+	</body>
+</html>

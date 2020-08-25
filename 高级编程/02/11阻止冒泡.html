@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		
+		<style type="text/css">
+			
+			.father {
+				width: 200px;
+				height: 200px;
+				background-color: green;
+			}
+			
+			.son {
+				width: 100px;
+				height: 100px;
+				background-color: blue;
+			}
+		</style>
+	</head>
+	<body>
+		
+		<div class="father">
+			<div class="son"></div>
+		</div>
+		
+		<script type="text/javascript">
+			let father = document.querySelector(".father");
+			father.addEventListener("click", function(){
+				console.log("father")
+			})
+			
+			let son = document.querySelector(".son");
+			son.addEventListener("click", function(event){
+				// 处理低版本浏览器兼容性问题
+				if(event && event.stopPropagation) {
+					event.stopPropagation();
+				} else {
+					window.event.cancelBubble = true;
+				}
+				console.log("son")
+				console.log(event)
+			})
+			
+			
+		</script>
+	</body>
+</html>

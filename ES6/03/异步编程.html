@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+
+		<script type="text/javascript">
+			function runAsync() {
+				let p = new Promise(function(resolve, reject) {
+					setTimeout(function() {
+						console.log("000")
+						resolve("111");
+					}, 3000)
+				});
+				return p
+				
+				runAsync().then(function(){
+					
+				})
+			}
+			runAsync()
+		</script>
+
+
+	</body>
+</html>

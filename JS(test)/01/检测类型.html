@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			var num = 100;
+			console.log(typeof num);
+			var bool = true
+			console.log(typeof bool);
+			var b;
+			console.log(typeof b);
+			var arr = [1, 2, 3]
+			console.log(typeof arr)
+			var str = "abc"
+			console.log(typeof(str))
+			
+			// js无法精确表示0.1,解决办法:先转换为整数,计算完后再转换为小数.
+			var a = 0.3
+			var b = 0.2
+			console.log(a - b)
+			console.log((a * 10 - b * 10) / 10)
+			var c=1/0
+			console.log(typeof 1/0);
+			console.log(isNaN(c))
+		</script>
+	</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			p+span{
+				color: #0000FF;
+			}
+			div~a{
+				color: #00FFFF;
+			}
+			div+div{
+				color: #FF0000;
+			}
+			/* p[title='sum']{
+				color: blueviolet; */
+			}
+			p::first-letter{
+				background-color: antiquewhite;
+				color: #FF0000;
+			}
+			p::before{	
+				content: "挺";
+				color:red;
+			}
+		</style>
+	</head>
+	<body>
+		<p>我是p标签</p>
+		<span>我是span</span>
+		<div>我是div1</div>
+		<div>嫡女</div>
+		<div>你还小</div>
+		<div>你不大</div>
+		<div>嗯嗯嗯</div>
+		<a href="">我是a</a>
+		<a href="">我是a</a>
+		<a href="">我是a</a>
+		<p>程咬金 </p>
+		<a href="">我是a</a>
+		<p title="sum">你挺行啊</p>
+		
+		
+	</body>
+</html>

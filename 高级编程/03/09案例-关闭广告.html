@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			div {
+				width: 300px;
+				height: 300px;
+				background: url(https://dss1.baidu.com/6ONXsjip0QIZ8tyhnq/it/u=3695063410,913835398&fm=58&s=BAA383081B72E7EB1E1923D8030070AE) no-repeat;
+				background-size: cover;
+				position: relative;
+			}
+			
+			button {
+				position: absolute;
+				top: 5px;
+				right: 5px;
+			}
+			
+		</style>
+	</head>
+	<body>
+		<div class="box">
+			<button>&times;</button>
+		</div>
+		
+		<script type="text/javascript">
+			(function(){
+				let box = document.querySelector(".box");
+				let btn = document.querySelector(".box button");
+				
+				let num = -1;
+				btn.addEventListener("click", function() {
+					num++;
+					if(num === 0) { //用户未点击过，那么打开广告
+						window.open("http://www.thd.cool");
+					} else {
+						box.style.display = "none";
+					}
+				})
+				
+			})();
+			
+		</script>
+	</body>
+</html>

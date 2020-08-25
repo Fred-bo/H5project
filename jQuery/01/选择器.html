@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script src="https://cdn.bootcdn.net/ajax/libs/jquery/2.0.0/jquery.js"></script>
+	</head>
+	<body>
+		<button id="btn1" type="button">按钮1</button>
+		<button id="btn2" type="button">按钮2</button>
+		<button id="btn3" type="button">按钮3</button>
+		<button id="btn4" type="button">按钮4</button>
+		
+		<p id="first">段落1</p>
+		<p>段落2</p>
+		<p class="test">段落3</p>
+		<p>段落4</p>
+		<p class="test">段落5</p>
+	</body>
+	<script type="text/javascript">
+		$(function(){
+			let first =$("#first")
+			console.log(first)
+			let all=$("p")
+			console.log(all)
+			let test=$(".test")
+			console.log(test)
+		})
+	</script>
+	<ul>
+		<li>111</li>
+		<li>222</li>
+		<li>333</li>
+	</ul>
+	<ul>
+		<li>4545</li>
+		<li>5656</li>
+		<li>7878</li>
+		<li>你哈</li>
+	</ul>
+	<a href="">百度</a>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			$("ul li:first").css({color:"red",fontsize:"20px"})
+			$("ul li:last-child").css({color:"blue"})
+			let h=$("[href]")
+			console.log(h)
+		})
+		
+	</script>
+</html>

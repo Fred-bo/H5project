@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>文字样式</title>
+		<style type="text/css">
+			span:first-of-type {
+				text-shadow: 2px 2px 3px blue;
+				/* 第一个值指的是左右方向的平移距离，第二个是上下的 平移距离 ，第三个模糊程度*/
+			}
+			span:last-of-type {
+				-webkit-text-stroke: 2px lightblue;
+				font-size: 40px;
+				color: transparent;
+			}
+			
+		</style>
+	</head>
+	<body>
+		<span>文字阴影</span>
+		<span>文字镂空</span>
+	</body>
+</html>

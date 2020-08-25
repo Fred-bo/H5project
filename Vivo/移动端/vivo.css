@@ -1,0 +1,263 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+a {
+  text-decoration: none;
+  display: block;
+}
+img {
+  display: block;
+}
+ul {
+  list-style: none;
+}
+div {
+  box-sizing: border-box;
+}
+html {
+  overflow: hidden;
+  height: 100%;
+}
+
+body {
+  overflow: auto;
+  height: 100%;
+  font-size: 0.32rem;
+  background-color: #F7F7F7;
+}
+.container {
+    width: 7.5rem;
+    position: relative;
+    overflow: hidden;
+}
+/* header */
+header {
+  display: flex;
+  position: fixed;
+  align-items: center;
+  justify-content: space-between;
+  width: 7.5rem;
+  height: 1.11rem;
+  font-size: 0.32rem;
+  padding-left: 0.4rem;
+  padding-right: 0.4rem;
+  box-sizing: border-box;
+  /* background-color: lightblue; */
+  z-index: 30;
+}
+header .ganggang {
+  font-size: 0.4rem;
+}
+header .logn {
+  font-size: 0.64rem;
+}
+header .gouwudai {
+  font-size: 0.4rem;
+}
+/*end header */
+/* swiper-img-container  */
+.swiper-container {
+    width: 7.5rem;
+    height: 11.6rem;
+    display: flex;
+    position: relative;
+    overflow: auto;
+}
+.swiper-container .sh {
+    width:7.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    position: relative;
+    left: 0.04rem;
+    top: 0;
+}
+.swiper-container img {   
+    height: 100%;
+}
+/*end swiper-img-container  */
+
+/* middle-img-container  */
+.middle-img-container {
+    width: 7.5rem;
+    display: flex;
+    flex-direction: column;  
+}
+.middle-img-container div {
+    position: relative;
+    width: 7.5rem;
+    height:8rem;
+    display: flex;
+    justify-content: center;
+    margin-top: 0.06rem;
+    overflow: hidden;
+}
+.middle-img-container img {
+    height: 100%;
+}
+/*end middle-img-container  */
+/* img-text */
+
+.swiper-container .img-text1 {
+    /* width: 375px; */
+    height: 0.56rem;
+    position: absolute;
+    left: 1.7rem;
+    top: 1.84rem;
+}
+.swiper-container .img-text2 {
+    /* width: 7.5rem; */
+    height: 0.56rem;
+    position: absolute;
+    left: 1.9rem;
+    top: 1.84rem;
+    z-index: 10;
+}
+.swiper-container .img-text3 {
+    /* width: 7.5rem; */
+    height: 0.56rem;
+    position: absolute;
+    left: 2.6rem;
+    top: 1.84rem;
+}
+/* img-text-container */
+.img-text-container {
+    display: flex;
+    width: 5.4rem;
+    height: 0.56rem;
+    position: absolute;
+    left: 1.7rem;
+    top: 2.8rem;
+    font-size: 0.36rem;
+}
+.img-text-buy {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 1.64rem;
+    height: 0.56rem;
+    position: absolute;
+    left: 3rem;
+    top: 3.5rem;
+}
+.img-text-buy a {
+    font-size: 0.28rem;
+    letter-spacing: 0.06rem;
+    color: #000;
+}
+.img-text-buy .arrow-right {
+    font-size: 0.28rem;
+}
+/*end img-text-container */
+
+/*end img-text */
+
+
+/*footer*/
+footer ul {
+    display: flex;
+    flex-direction: column;
+    margin-top: 0.56rem;
+    color: #656565;
+    font-size: 0.3rem;
+}
+footer ul li {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 0.68rem;
+    margin-bottom: 0.6rem;
+}
+/*  */
+hr {
+    width: 6rem;
+    margin-left: 0.7rem;
+    opacity: 0.1;
+}
+.iconfont-container-kefu {
+    display: flex;
+    width: 7.5rem;
+    height: 1.16rem;
+    color: #456fff;
+    padding-left: 0.7rem;
+    align-items: center;
+}
+.kefuxiaoxi {
+    font-size: 0.44rem;
+    padding-right: 0.14rem;
+}
+.phone-number {
+    width: 7.5rem;
+    height: 1.312rem;
+    display: flex;
+    flex-direction: column;
+   line-height: 0.34rem;
+   padding-left: 0.7rem;
+   justify-content: center;
+   line-height: 0.4rem;
+}
+.phone-number span {
+     color: #456fff;
+     padding-bottom: 0.06rem;
+     font-size: 0.3rem;
+}
+.phone-number p {
+    font-size: 0.24rem;
+    color: #666;
+}
+.iconfont-container {
+    width: 7.5rem;
+    height: 1rem;
+    align-items: center;
+    display: flex;
+    padding-left: 0.7rem;
+}
+.iconfont-container .attention {
+    font-size: 0.25rem;
+    padding-right:0.36rem ;
+    color: #666;
+}
+.iconfont-container .s {
+    font-size: 0.25rem;
+    color: #666;
+}
+.ziti {
+    font-size: 0.4rem;
+    padding-right: 0.36rem;
+}
+.footer-bottom {
+    width: 7.5rem;
+    height: 0.6rem;
+    display: flex;
+    /* flex-direction: column; */
+    flex-wrap: wrap;
+    font-size: 0.18rem;
+    color: #656565;
+    padding: 0 0.7rem;
+    margin-bottom: 0.4rem;
+}
+.footer-bottom .p-container p {
+    display: inline;
+    letter-spacing: 0.02rem;
+    cursor: pointer;
+}
+.footer-bottom .p-container {
+    text-align: center;
+}
+.shangjiantou {
+    width: 0.7rem;
+    height:0.7rem;
+    position:fixed;
+    right:0.38rem;
+    bottom:0.2rem;
+    background-color: #AFAFAF;
+    color: #fff;
+     border-radius: 0.2rem;
+     text-align: center;
+     line-height: 0.7rem;
+     opacity: 0.7;
+}
+/*end footer*/
+
+

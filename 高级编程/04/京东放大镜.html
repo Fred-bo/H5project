@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			.box{
+				position: relative;
+				width: 600px;
+				height: 280px;
+				top: 100px;
+				left: 100px;
+			}
+			img {
+				width: 600px;
+				height: 280px;
+			}
+			.mask{
+				position: absolute;
+				top: 0;
+				left: 0;
+				opacity: 0.5;
+				width: 200px;
+				height: 200px;
+				background-color: lightblue;
+				display: none;
+			}
+			.big{
+				position: absolute;
+				left: 602px;
+				top: 0;
+				width: 800px;
+				height: 480px;
+				border: 1px solid blue;
+				background: url(../01/四季主题切换/img/01.jpg) no-repeat;
+				display: none;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="box">
+			<img src="../01/四季主题切换/img/01.jpg">
+			<div class="mask"></div>
+			<div class="big"></div>
+		</div>
+		<script type="text/javascript">
+			window.onload=function(){
+				let box=document.querySelector(".box");
+				let mask=document.querySelector(".mask");
+				let big=document.querySelector(".big");
+				let rect=box.getBoundingClientRect();
+				
+				
+				
+				function move(e){
+					let y=e.pageY-mask.offsetHeight/2 -rect.top;
+					let x=e.pageX-mask.offsetWidth/2 -rect.left;
+					
+					if(x<0){
+						x=0;
+					}else if(x>400){
+						x=400;
+					}
+					
+					if(y<0){
+						y=0;
+					}else if(y>80){
+						y=80
+					}
+						
+						mask.style.left=x +"px";
+						mask.style.top=y +"px"
+						big.style.backgroundPosition=`${-1*x}px ${-1*y}px`
+						
+				}
+				
+				box.addEventListener("mousemove",move)
+					
+				
+				
+				box.addEventListener("mouseenter",function(){
+					mask.style.display="block"
+					big.style.display="block"
+				});
+				
+				box.addEventListener("mouseleave",function(){
+					mask.style.display="none";
+					big.style.display="none"
+				})
+			}
+		</script>
+	</body>
+</html>

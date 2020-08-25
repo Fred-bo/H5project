@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>首页</title>
+    <link rel="stylesheet" href="首页.css">
+    <link rel="stylesheet" href="../小米移动端/iconfont/iconfont.css">
+    <!-- <script src="rem转换.js"></script> -->
+    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
+    <script>
+        (function (doc, win) {
+            var docEl = doc.documentElement,
+                resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+                recalc = function () {
+                    // 宽度     
+                    var clientWidth = docEl.clientWidth;
+                    if (!clientWidth) return;
+                    // 
+                    if (clientWidth >= 750) {
+                        docEl.style.fontSize = '100px';
+                    } else {
+                        // 动态设置html的font-size
+                        docEl.style.fontSize = 100 * (clientWidth / 750) + 'px';
+                    }
+                };
+            if (!doc.addEventListener) return;
+            win.addEventListener(resizeEvt, recalc, false);
+            doc.addEventListener('DOMContentLoaded', recalc, false);
+        })(document, window);
+        //上面这段代码的 大意是：如果页面的宽度超过了750px，那么页面中html的font-size恒为100px，否则，页面中html的font-size的大小为： 100 * (当前页面宽度 / 750)
+    </script>
+
+</head>
+
+<body>
+    <!-- top fixed nav -->
+    <div class="top-nav">
+        <!-- logn search wode -->
+        <div class="logn-search-wode-icon">
+            <a href="">
+                <img class="logn-img" src="../小米移动端/img/logn.png" alt="">
+            </a>
+            <div class="iconfont icon-sousuo search-btn">
+                <span>搜索商品名称</span>
+            </div>
+            <i class="iconfont icon-wode private"></i>
+        </div>
+        <!--end logn search wode -->
+        <!-- top-nav-ul  -->
+        <div class="top-nav-container">
+            <div class="nav-con">
+                <ul class="nav-ul">
+                    <li class="active">推荐</li>
+                    <li>手机</li>
+                    <li>智能</li>
+                    <li>电视</li>
+                    <li>笔记本</li>
+                    <li>家电</li>
+                    <li>生活周边</li>
+                </ul>
+            </div>
+            <div class="iconfont icon-iconfontarrows arrow-down"></div>
+        </div>
+    </div>
+    <div class="swiper">
+        <div class="swiper-img-container">
+            <a href=""><img class="swiper-img" src="img/swiper1.jpg" alt=""></a>
+            <!-- <a href=""><img class="swiper-img" src="img/swiper1.jpg" alt=""></a>
+        <a href=""><img class="swiper-img" src="img/swiper1.jpg" alt=""></a> -->
+        </div>
+    </div>
+    <div></div>
+
+</body>
+
+</html>

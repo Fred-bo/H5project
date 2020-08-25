@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			
+			
+		/* function f1() {
+			var str="abcd"
+			var reg=/abc/;
+			var m=reg.test(str);
+			console.log(m)
+		}	
+		f1() */
+		
+		/* var reg = new RegExp();
+		var str = "abcd";
+		reg.test(str); */
+		
+		/* var str = "abcd";
+		var reg = new RegExp("abc","im");
+		
+		console.log(reg.test(str)) */
+		
+		/* var reg=/[0-9]/;
+		var str="10086";
+		console.log(str.match(reg)) */
+		
+		
+		/* var reg=/t[aeo]n/;
+		var str="tin";
+		console.log(reg.test(str))//true */
+		
+		
+		/* var reg=/t(oo|ee|a)n/;//（）可以匹配多个字符,并且通过|来选择
+		var str="toon";
+		console.log(reg.test(str)); */
+		
+		
+		/* function f1() {
+			var reg=/\u4e00/g;
+			var str = "一二三四五";
+			console.log(str.match(reg));
+			
+			var m="你好";
+			//charCodeAt:获得指定字符在Unicode编码表中的下标
+			//toString(16):将数值转为16进制数显示,是一个字符串
+			console.log(m.charCodeAt(0),m.charCodeAt(1));
+			console.log(m.charCodeAt(0).toString(16),m.charCodeAt(1).toString(16))
+			reg=/[\u4f60\u597d]/;
+			str="天气真好"
+			console.log(str.match(reg))
+			
+		}
+		f1() */
+		
+		// function f1() {
+		// 	var reg = /\w+/g
+		// 	var str = "abc+www123!1";
+		// 	console.log(str.match(reg))
+			
+		// 	reg = /\w*/g;
+		// 	console.log(str.match(reg));
+			
+		// 	reg=/a?/g;
+		// 	str = "banana";
+		// 	console.log(str.match(reg));
+		// 	console.log(reg.test(str));//因为只有a和""被认为了true
+		// }
+		// f1()
+		
+		var reg=/\bcde/g;//单词边界后边是cde字符串
+		var str="abc cde fgh";
+		var m=str.match(reg);//["cde"]
+		console.log(m)
+		</script>
+	</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<div>
+			<ul class="two">
+				<li>我</li>
+				<li>你</li>
+				<li>他</li>
+				<li>她</li>
+			</ul>
+			<button type="button" onclick="add()">添加元素</button>
+		</div>
+		<script type="text/javascript">
+			// 链式调用
+			//先获取父节点,再获取子节点
+			
+			//document.getElementsByClassName();IE9及以上支持
+			
+			//动态添加
+			// let li=document.querySelectorAll(".two li")  静态添加
+			let li=document.getElementsByTagName("li")//动态添加
+			console.log(li)
+			
+			function add(){
+				let two=document.querySelector(".two");
+				let newli = document.createElement("li")
+				newli.innerHTML="我是新来的";
+				two.appendChild(newli)
+				console.log(li)
+			}
+			
+			
+		</script>
+	</body>
+</html>

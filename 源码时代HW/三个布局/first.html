@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>first</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      .outer {
+        margin: 5px auto;
+        width: 700px;
+        height: 700px;
+        background-color: lightblue;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        text-align: center;
+      }
+      header,
+      footer {
+        width: 100%;
+        height: 150px;
+        background-color: lightcoral;
+        line-height: 150px;
+      }
+      footer {
+        align-items: flex-end;
+      }
+      section {
+        display: flex;
+        justify-content: space-between;
+      }
+      aside {
+        width: 150px;
+        height: 400px;
+        background-color: lightgoldenrodyellow;
+        line-height: 400px;
+      }
+      .mid {
+          line-height: 400px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="outer">
+      <header>页面测试</header>
+      <section>
+        <aside class="left">这里是左边</aside>
+        <div class="mid"> 这里是中间</div>
+        <aside class="right">这里是右面</aside>
+      </section>
+      <footer>这里是页脚</footer>
+    </div>
+  </body>
+</html>

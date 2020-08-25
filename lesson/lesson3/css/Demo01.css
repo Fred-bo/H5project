@@ -1,0 +1,13 @@
+p:first-letter{
+	font-size: 30px;
+	color: pink;
+}
+p:first-line{
+	background-color: yellow;
+}
+.so:before{
+	content: "Hello";
+}
+.so:after{
+	content: "你好，中国";
+}

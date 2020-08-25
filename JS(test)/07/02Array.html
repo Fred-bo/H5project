@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			
+			function fn() {
+				var arr1 = [1,2,3];
+				var arr2 = [11,22,33];
+				
+				// 连接多个数组,返回一个新的数组,不会更改原数组
+				var all = arr1.concat(arr2, [10, 20]);
+				console.log(all);
+				console.log(arr1);
+				console.log(arr2);
+			}
+			// fn();
+			
+			function fn1() {
+				var arr = [1,2,3,4,5,6,7,8,9,10];
+				
+				// 根据起始下标和结束下标截取数组元素，返回一个新的数组
+				var newArr = arr.slice(2, 7);
+				console.log(newArr)
+				
+				// 将数组转为字符串,参数表示连接符，返回一个字符串
+				var str = arr.join("-");
+				console.log(str)
+			}
+			// fn1()
+			
+			function fn2() {
+				var arr = ["apple", "banana"];
+				console.log(arr);
+				
+				// 往数组末尾添加元素,会更改原数组,返回数组新的长度
+				var a = arr.push("lemon");
+				console.log(a, arr)
+				
+				// 向数组头部添加元素,会更改原数组,返回数组新的长度
+				var c = arr.unshift("pea");
+				console.log(c, arr);
+				
+				
+				// 删除数组末尾的元素,会更改原数组,返回删除的元素
+				var b = arr.pop();
+				console.log(b, arr);
+				
+				// 删除数组头部的元素,会更改原数组,返回删除的元素
+				var d = arr.shift();
+				console.log(d, arr);
+			}
+			// fn2();
+			
+			function fn3() {
+				var arr = ["aaa", "bbb", "ccc", "ddd"];
+				
+				// 删除数组元素
+				// 参数1: 起始下标,
+				// 参数2: 删除个数,
+				// 返回值: 删除的数组
+				// var a = arr.splice(1, 1);
+				// console.log(a, arr);
+				
+				// 替换: 先删除,后添加
+				// var b = arr.splice(1, 1, "banana");
+				// console.log(b, arr);
+				
+				// 往指定下标位置添加元素，从参数3开始都是添加的元素，数组中原先位置的元素依次往后移动
+				//返回值： 跟第二个参数有关
+				var c = arr.splice(1, 0, "apple", "banana");
+				console.log(c, arr);
+			}
+			// fn3();
+			
+			function　f4() {
+				var arr = [79,8,31,4,32,48,7,14,56,48,94,23,156];
+				
+				arr.sort(function(a, b){
+					return a-b;
+				});
+				
+				console.log(arr);
+				
+				
+				var stu = [
+					{name: "夏明", age: 18},
+					{name: "张三", age: 8},
+					{name: "李四", age: 26},
+					{name: "王五", age: 15},
+					{name: "赵六", age: 20},
+				]
+				stu.sort(function(a, b) { //排序
+					return a.age - b.age;
+				})
+				
+				console.log(stu)
+			}
+			// f4();
+			
+			function fn5() {
+				var arr = ["apple", "banana", "lemon"];
+				arr.reverse(); //反转数组，不是倒序
+				console.log(arr);
+			}
+			// fn5()
+			
+			function fn6() {
+				var arr = ["apple", "banana", "lemon"];
+				
+				for(var i in arr) { //i表示下标，没有直接获得元素
+					
+				}
+				
+				for(var j of arr) { //j表示每一个元素，不能获得下标
+					
+				}
+				
+				// forEach函数的参数是一个函数
+				// 这个函数的参数1表示元素,参数2表示下边
+				arr.forEach(function(item, index){
+					console.log(index, item)
+				});
+			}
+			// fn6()
+			
+			function fn7() {
+				var arr = [1,2,3];
+				
+				// map表示遍历数组的每一个元素,并进行处理, 返回一个新数组
+				// item表示元素
+				// index表示下标
+				var newArr = arr.map(function(item, index) {
+					return item*item;
+				});
+				console.log(arr)
+				console.log(newArr);
+				
+				// React列表渲染
+				// var list = ["个人中心", "首页", "客服"];
+				// list.map(function(item, index){
+				// 	return <li>item</li>
+				// })
+			}
+			fn7();
+			
+		</script>
+	</body>
+</html>

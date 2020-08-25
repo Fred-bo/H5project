@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			
+			.father {
+				width: 200px;
+				height: 200px;
+				background-color: green;
+			}
+			
+			.son {
+				width: 100px;
+				height: 100px;
+				background-color: blue;
+			}
+		</style>
+	</head>
+	<body>
+		
+		<button type="button" style="margin: 100px;">点击按钮</button>
+		<input type="text">
+		<a href="http://www.baidu.com">百度</a>
+		
+		<div class="father">
+			<div class="son"></div>
+		</div>
+		
+		<script type="text/javascript">
+			
+			let btn = document.querySelector("button");
+			btn.addEventListener("click", function(event) { //event表示事件对象
+				event = event || window.event;
+				
+				console.log(event)
+			})
+			
+			document.onkeyup = function(event) {
+				console.log(event);
+			}
+			
+			let input = document.querySelector("input");
+			input.addEventListener("change", function(event) {
+				console.log(event)
+			})
+			
+			let a = document.querySelector("a");
+			a.addEventListener("click", function(event) {
+				event.preventDefault(); //阻止浏览器的默认行为：比如打开链接
+			})
+			
+			let father = document.querySelector(".father");
+			father.addEventListener("click", function(){
+				console.log("father");
+			})
+			
+			let son = document.querySelector(".son");
+			son.addEventListener("click", function(event){
+				console.log("son");
+				event.stopPropagation(); //阻止冒泡
+			})
+		</script>
+		
+	</body>
+</html>

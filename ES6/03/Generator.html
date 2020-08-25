@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			function* gener() {
+				yield 'hello';
+				yield "world";
+				return "ending"
+			}	
+		var res=gener();//调用函数不会执行函数而是获得内部指针对象
+		var res1=res.next();//调用指针对象的方法next（），来获得函数内部的状态值
+		var res2=res.next();
+		var res3=res.next();
+		var res4=res.next();//只有当value的值为undefined,done的值为true时,才表示函数执行结束
+			console.log(res2)
+			console.log(res4)
+			
+		</script>
+	</body>
+</html>

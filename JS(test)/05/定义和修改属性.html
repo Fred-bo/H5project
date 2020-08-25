@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+				function checkProperty() {
+					var obj={
+						name:"小明",
+						age:18
+					}
+					//定义属性
+					Object.defineProperty(obj,"sex",{
+						value:"male"
+					})
+					//给原型添加属性
+					obj.__proto__.type="学生";
+					console.log(obj);
+					console.log(obj.type);
+					//in 检测所有属性,包括继承的属性
+					console.log("name" in obj);//检测原有属性
+					console.log("sex" in obj);//检测定义的属性
+					console.log("type" in obj);//检测继承下来的属性
+				}
+				checkProperty()
+		</script>
+	</body>
+</html>

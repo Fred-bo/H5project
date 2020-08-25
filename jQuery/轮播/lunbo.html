@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script src="https://cdn.bootcdn.net/ajax/libs/jquery/2.0.0/jquery.js"></script>
+		<script src="lunbo.js" type="text/javascript" charset="utf-8"></script>
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			.con {
+				width: 533px;
+				height: 300px;
+				position: relative;
+				margin-top: 20px;
+				margin-left: 355px;
+				overflow: hidden;
+			}
+
+			.img-con img {
+				width: 533px;
+				height: 300px;
+			}
+			ul {
+				position: absolute;
+				left: 50%;
+				transform: translateX(-50%);
+				bottom: 20px
+			}
+			
+			ul li {
+				display: inline-block;
+				width: 20px;
+				height: 20px;
+				border-radius: 50%;
+				background-color: lightcoral;
+				border: 1px solid #DFE9F3;
+			}
+			
+			.arrow{
+				position: absolute;
+				width: 45px;
+				height: 45px;
+			}
+			.arrow {
+				background-color: lavender;
+				opacity: .5;
+				border: 2px solid #FF4500;
+				position: absolute;
+				top: 50%;
+				transform: translateY(-50%);
+			}
+			.arrow img{
+				width: 45px;
+				height: 45px;
+			}
+			.right {
+				right: 0;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="con">
+			<div class="img-con">
+				<img class="one" src="img/4.jpg">
+				<img src="img/2.jpg">
+				<img src="img/3.jpg">
+				<img src="img/1.jpg">
+			</div>
+			<ul>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+			</ul>			
+				<div class="left arrow"><img src="img/left.png"></div>
+				<div class="right arrow"><img src="img/right.png"></div>			
+		</div>
+	</body>
+</html>

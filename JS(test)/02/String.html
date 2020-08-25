@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>String类型转换</title>
+	</head>
+	<body>
+		<h1></h1>
+		<script type="text/javascript">
+			function f1() {
+				var s1 = "你好，'小明'"
+				document.querySelector("h1").innerHTML = s1;
+				var obj = {
+					name: "小明"
+				};
+				console.log(obj.toString())
+				var str = JSON.stringify(obj);
+				console.log(str)
+				var o = JSON.parse(str); //将json字符串转为json对象
+				console.log(o)
+			}
+			f1();
+			function f2() {
+				var num=100;
+				console.log(String(num),typeof num)
+				var bool=false;
+				console.log(String(bool),typeof String(bool))
+				console.log(String(null),typeof String(null))
+				console.log(num+'')
+				console.log(String(undefined),typeof String(undefined))
+				console.log(undefined+"")
+			}
+			f2()
+			function f3() {
+				var name="小明";
+				var age=18;
+				console.log(`"${name}"年年"${age}"岁`)
+			}
+			f3()
+			function f4(){
+				var num="xihao154651548"
+				console.log(num.length)
+				console.log(num[0])
+			}
+			f4()
+		</script>
+	</body>
+</html>

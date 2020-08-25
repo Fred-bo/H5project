@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			
+			function setProp(){
+				var person={
+					name:"孙悟空",
+					get age() {
+						if(this._age_==undefined){
+							return 0;
+						}else {
+							return this._age_;
+						}
+					},
+					set age(num){
+						if(0< num && num <150){
+							this._age_ =num;
+						}
+					}
+				};
+				console.log(person.age);
+				person.age =20;
+				console.log(person.age);
+			}
+			setProp()
+			
+		</script>
+	</body>
+</html>

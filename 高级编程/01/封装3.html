@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<div>
+			<ul>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+			</ul>
+		</div>
+	<!--  编辑函数， 在原型链Element .prototype 上封装myChildren功能，
+		 解决浏览器的兼容性问题， 不可用children属性 -->
+		<script type="text/javascript">
+		Element.prototype.myChildren=function () {
+				let arr=[]
+				let children=this.childNodes;
+				for(let i=0;i<children.length;i++){
+					if(children[i].nodeType===1){
+						arr.push(children[i])
+					}
+				}
+				return arr;
+			}
+			let ul=document.querySelector("ul")
+			let arr= ul.myChildren()
+			console.log(arr)
+		</script>
+	</body>
+</html>

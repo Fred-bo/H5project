@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script src="https://cdn.bootcdn.net/ajax/libs/jquery/2.0.0/jquery.js"></script>
+	</head>
+	<body>
+		<script type="text/javascript">
+			$(function(){
+				$(window).keyup(function(event){
+				    //获取事件对象，里面包含各种有用的信息。
+				    console.log(event);
+				    
+				    //event.which是获取ASCII码，前面的函数是将ASCII码转换成字符，空格键和Enter键输出均为空白。
+				    console.log(String.fromCharCode(event.which));
+				    
+				    //从event对象中key属性获取字符，但是Enter键的key值为"Enter"，空白键还是空白" "。
+				    // console.log(event.key);
+				})
+			})
+			// window.addEventListener("keyup", function(event){
+			// 	console.log(event);
+			// })
+			
+		</script>
+	</body>
+</html>

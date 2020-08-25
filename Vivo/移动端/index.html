@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>vivo智能手机移动端</title>
+    <link rel="stylesheet" href="../PC端/iconfont/iconfont.css">
+    <link rel="stylesheet" href="../移动端/iconfont/iconfont.css">
+    <link rel="stylesheet" href="./vivo.css">
+    <link rel="shortcut icon" href="./img/favicon_vivo.ico" type="image/x-icon">
+    <script>
+        (function (doc, win) {
+            var docEl = doc.documentElement,
+                resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+                recalc = function () {
+                    // 宽度     
+                    var clientWidth = docEl.clientWidth;
+                    if (!clientWidth) return;
+                    // 
+                    if (clientWidth >= 750) {
+                        docEl.style.fontSize = '100px';
+                    } else {
+                        // 动态设置html的font-size
+                        docEl.style.fontSize = 100 * (clientWidth / 750) + 'px';
+                    }
+                };
+            if (!doc.addEventListener) return;
+            win.addEventListener(resizeEvt, recalc, false);
+            doc.addEventListener('DOMContentLoaded', recalc, false);
+        })(document, window);
+        //上面这段代码的 大意是：如果页面的宽度超过了750px，那么页面中html的font-size恒为100px，否则，页面中html的font-size的大小为： 100 * (当前页面宽度 / 750)
+    </script>
+</head>
+<body>
+    <div class="container">
+        <!-- header  -->
+        <header>
+            <div class="iconfont icon-ganggang ganggang"></div>
+            <div class="iconfont icon-vivo logn"></div>
+            <div class="iconfont icon-gouwudai gouwudai"></div>
+        </header>
+        <!--end header  -->
+        <!-- swiper-container -->
+        <div class="swiper-container">
+            <div class="sh">
+                <img src="img/swiper1.jpg" alt="">
+                <div class="img-text1"><img src="img/swiper-img-text.svg" alt=""></div>  
+                <div class="img-text-container">
+                    <div>
+                        <span>超感光微云台</span>&nbsp;
+                        <span>夜色更精彩</span>
+                    </div>
+                </div>
+                <div class="img-text-buy">
+                    <a  href="#">立即购买</a> 
+                    <div class="iconfont icon-youjiantou arrow-right"></div>                      
+                </div>
+            </div>
+
+
+
+            
+            <div class="sh">
+                <img src="img/swiper2.jpg" alt="">
+                <div class="img-text2"><img src="img/iQoo5G.svg" alt=""></div>   
+            </div>
+            <div class="sh">
+                <img src="img/swiper3.jpg" alt="">
+                <div class="img-text3"><img src="img/swiper-img-text3.svg" alt=""></div>     
+            </div> 
+               
+              
+            
+        </div>
+        
+        <!--end swiper-container -->
+        <!-- middle-img-container -->
+        <div class="middle-img-container">
+            <div><img src="img/middle-img1.png" alt=""></div>
+            <div><img src="img/middle-img2.jpg" alt=""></div>
+            <div><img src="img/middle-img3.png" alt=""></div>
+            <div><img src="img/middle-img4.jpg" alt=""></div>
+            <div><img src="img/middle-img5.png" alt=""></div>
+            <div><img src="img/middle-img6.jpg" alt=""></div>
+        </div>
+        <!--end middle-img-container -->
+        <footer>
+            <div>
+                <ul>
+                    <li><span>热门链接</span><span>+</span></li>
+                    <li><span>在线购买</span><span>+</span></li>
+                    <li><span>服务支持</span><span>+</span></li>
+                    <li><span>vivo社区</span><span>+</span></li>
+                    <li><span>关于vivo</span><span>+</span></li>
+                </ul>
+            </div>
+            <hr>
+            <div class="iconfont-container-kefu">
+                <div class="iconfont icon-kefuxiaoxi kefuxiaoxi"></div>
+                <p>在线客服</p>
+            </div>
+            <hr>
+            <div class="phone-number">
+                <span>400-678-9688</span>
+                <p>全国客户服务热线 7*24小时</p>
+            </div>
+            <hr>
+            <div class="phone-number">
+                <span>400-679-9688</span>
+                <p>NEX 专属服务热线 7*24小时</p>
+            </div>
+            <hr>
+            <div class="iconfont-container">
+                <span class="attention">关注vivo</span>
+                <div class="iconfont icon-weibo ziti"></div>
+                <div class="iconfont icon-gongzhonghao ziti"></div>
+                <div class="iconfont icon-zhifubao ziti"></div>
+                <div class="iconfont icon-xiaochengxu ziti"></div>
+                <span class="s">Select Location</span>    
+            </div>
+            <div class="footer-bottom">
+               <div class="p-container">
+                    <p>Copyright ©2011-2020 广东天宸网络科技有限公司 版权所有 保留一切权利 </p>
+                    <p>隐私政策</p>
+                    <p>法律声明</p>
+                    <p>营业执照</p>
+                    <p>粤B2-20080267</p>
+                    <p>粤ICP备14052990号</p>
+                    <p>粤公网安备44190002004246号</p>
+               </div>    
+            </div>
+            <div class="fixed-arrow-up">
+                <a href="#">
+                    <div class="iconfont icon-shangjiantou shangjiantou"></div>
+                </a>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>

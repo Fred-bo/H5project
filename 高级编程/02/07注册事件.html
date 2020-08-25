@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<button onclick="show()">传统注册方式1</button>
+		<button class="two">传统注册方式2</button>
+		<button class="three">方法监听方式</button>
+		
+		<script type="text/javascript">
+			// 事件源：发生事件的元素
+			// 事件： 点击、输入、加载完成、滚动
+			// 事件处理： 在元素上设置监听事件，并绑定事件函数，当事件发生时，触发这个事件函数执行
+			
+			// 注册事件有两种方式:
+			// 	1. 传统注册方式:使用on开头的属性,
+			// 		在元素上直接使用属性监听 onclick="show()"   this指代window
+			// 		找到元素后,使用属性  btn.onclick = function() {}   this指代触发事件的元素
+			//  特点： 同一个元素同一个事件只能注册一次，后面注册的事件会覆盖之前的事件
+			function show() {
+				alert("哈哈哈");
+				console.log(this)
+			}
+			
+			let btn = document.querySelector(".two");
+			btn.onclick = function() {
+				alert("你好啊");
+			}
+			btn.onclick = function() {
+				alert(111);
+				console.log(this)
+			}
+			
+			
+			//  2.方法监听方式
+			// addEventListener("事件名称", 事件处理函数)
+			// 有兼容性问题: IE8以下,Opera7以下不支持
+			// 事件名称不需要使用on开头
+			// 同一个元素同一个事件可以注册多次， 事件处理函数会按照注册的顺序来执行
+			let btn2 = document.querySelector(".three");
+			btn2.addEventListener("click", function(){
+				alert(111)
+				console.log(this); //元素对象
+			})
+			btn2.addEventListener("click", function(){
+				alert(222)
+			})
+			btn2.addEventListener("click", function(){
+				alert(333)
+			})
+			
+		</script>
+	</body>
+</html>

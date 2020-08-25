@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			var show = function() {
+				var str = "JavaScript 是属于网络的脚本语言！JavaScript 被数百万计的网页用来改进设计、验证表单、 检测浏览器、 创建cookies， 以及更多的应用。 JavaScript 是因特网上最流行的脚本语言。 JavaScript很容易使用！ 你一定会喜欢它的！ "
+				var num=0;
+				for (var i=0;i<str.length;i++){
+					if(str[i]=="J"){
+						if(str.substr(i,10)){
+							num++;
+							document.write(`JavaScript第${num}次出现在${i}位置<br/>`)
+						}
+					}
+				}
+					document.write(`JavaScript在这句话中总共出现了${num}次`)
+			}
+			show()
+		</script>
+	</body>
+</html>

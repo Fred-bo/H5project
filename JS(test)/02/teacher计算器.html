@@ -1,0 +1,67 @@
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		
+		请输入第一个操作数：<input id="one" type="text"> <br />
+		请输入第二个操作数：<input id="two" type="text"> <br />
+		
+		<button onclick="operate('add')">+</button>
+		<button onclick="operate('sub')">-</button>
+		<button onclick="operate('mul')">&times;</button>
+		<button onclick="operate('divide')">/</button> <br />
+		显示结果：
+		<h1 id="result"></h1>
+		
+		
+		<script type="text/javascript">
+			var oneInput = document.getElementById("one");
+			var twoInput = document.getElementById("two");
+			var h1 = document.getElementById("result");
+			
+			function operate(type) {
+				// input中输入的数据是String类型,所以进行计算之前需要先转为Number类型
+				var a = oneInput.value*1;
+				var b = twoInput.value*1;
+				
+				var res;
+				// 判断操作数是否包含小数点,需要做精度值的处理
+				if(a.toString().match(".") || b.toString().match(".")) {
+					// 判断是什么操作:加/减/乘/除
+					if(type == "add") {
+						res = (a*10000 + b*10000)/10000
+					} else if(type == "sub") {
+						res = (a*10000 - b*10000)/10000
+					} else if(type == "mul") {
+						res = ((a*10000) * (b*10000))/(10000*10000)
+					} else if(type == "divide") {
+						res = ((a*10000) / (b*10000)).toFixed(2); //toFixed方法指定小数点后保留多少位
+					} else {
+						res = "操作错误"
+					}
+				} else {
+					if(type == "add") {
+						res = a + b;
+					} else if(type == "sub") {
+						res = a - b;
+					} else if(type == "mul") {
+						res = a * b;
+					} else if(type == "divide") {
+						res = a / b;
+					} else {
+						res = "操作错误"
+					}
+					
+				}
+				
+				// 将结果显示页面
+				h1.innerHTML = res;
+			}
+		</script>
+		
+	</body>
+</html>

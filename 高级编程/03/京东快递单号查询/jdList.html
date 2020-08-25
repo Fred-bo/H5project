@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="jdList.css" />
+</head>
+
+<body>
+	<div class="box">
+		<form action="" method="post">
+			<label>公司名称</label>
+			<select name="express">
+				<option value="">京东快递</option>
+				<option value="">韵达快递</option>
+				<option value="">顺风快递</option>
+			</select><br>
+			<div class="search">
+				<label>快递单号</label>
+				<div class="focusBig"></div>
+				<input type="text" name="" id="" value="" placeholder="请输入您的快递单号" class="shu" />
+				<button type="button">查询</button>
+			</div>
+
+		</form>
+
+	</div>
+	<script type="text/javascript">
+		let input=document.querySelector(".shu");
+		let text=document.querySelector(".focusBig")
+		input.addEventListener("keyup",function(){
+			if(this.value=="") {
+				text.style.display="none";
+			}else{
+				text.style.display="block";
+				text.innerHTML=this.value
+			}
+		})
+		input.addEventListener("blur",function(){
+			text.style.display="none"
+		})
+		input.addEventListener("focus",function(){
+			if(text.value!=""){
+				text.innerHTML=this.value
+				text.style.display="block"
+			}
+		})
+	</script>
+</body>
+
+</html>

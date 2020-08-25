@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <style>
+        p {
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+        .box {
+            width: 236px;
+            height: 300px;
+            border: 1px solid red;
+        }
+
+        .pic {
+            width: 180px;
+            height: 200px;
+        }
+        .title {
+            font-size: 18px;
+            color: #333;
+        }
+        .description {
+            font-size: 14px;
+            color: #555;
+        }
+        .current {
+            color: #ff6700;
+        }
+        .old {
+            color: #999;
+            text-decoration: line-through;
+        }
+		.container {
+			width: 1200px;
+			height: auto;
+			margin: 50px auto;
+			display: flex;
+			flex-wrap: wrap;
+		}
+    </style>
+</head>
+<body>
+    <div class="container">
+		<div class="box">
+		    <img class="pic" src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/0099822e42b4428cb25c4cdebc6ca53d.jpg?thumb=1&w=200&h=200&f=webp&q=90" alt="">
+		    <p class="title">小米10</p>
+		    <p class="description">5000万像素</p>
+		    <p><span class="current">2799</span> <span class="old">3999</span></p>
+		</div>
+		<div class="box">
+		    <img class="pic" src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/0099822e42b4428cb25c4cdebc6ca53d.jpg?thumb=1&w=200&h=200&f=webp&q=90" alt="">
+		    <p class="title">小米10</p>
+		    <p class="description">5000万像素</p>
+		    <p><span class="current">2799</span> <span class="old">3999</span></p>
+		</div>
+		<div class="box">
+		    <img class="pic" src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/0099822e42b4428cb25c4cdebc6ca53d.jpg?thumb=1&w=200&h=200&f=webp&q=90" alt="">
+		    <p class="title">小米10</p>
+		    <p class="description">5000万像素</p>
+		    <p><span class="current">2799</span> <span class="old">3999</span></p>
+		</div>
+		<div class="box">
+		    <img class="pic" src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/0099822e42b4428cb25c4cdebc6ca53d.jpg?thumb=1&w=200&h=200&f=webp&q=90" alt="">
+		    <p class="title">小米10</p>
+		    <p class="description">5000万像素</p>
+		    <p><span class="current">2799</span> <span class="old">3999</span></p>
+		</div>
+		<div class="box">
+		    <img class="pic" src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/0099822e42b4428cb25c4cdebc6ca53d.jpg?thumb=1&w=200&h=200&f=webp&q=90" alt="">
+		    <p class="title">小米10</p>
+		    <p class="description">5000万像素</p>
+		    <p><span class="current">2799</span> <span class="old">3999</span></p>
+		</div>
+		<div class="box">
+		    <img class="pic" src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/0099822e42b4428cb25c4cdebc6ca53d.jpg?thumb=1&w=200&h=200&f=webp&q=90" alt="">
+		    <p class="title">小米10</p>
+		    <p class="description">5000万像素</p>
+		    <p><span class="current">2799</span> <span class="old">3999</span></p>
+		</div>
+		<div class="box">
+		    <img class="pic" src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/0099822e42b4428cb25c4cdebc6ca53d.jpg?thumb=1&w=200&h=200&f=webp&q=90" alt="">
+		    <p class="title">小米10</p>
+		    <p class="description">5000万像素</p>
+		    <p><span class="current">2799</span> <span class="old">3999</span></p>
+		</div>
+	</div>
+    
+
+    <script>
+		$(function(){
+			let img = document.querySelectorAll(".pic");
+			let title = document.querySelectorAll(".title");
+			let description = document.querySelectorAll(".description");
+			let current = document.querySelectorAll(".current");
+			let old = document.querySelectorAll(".old");
+			
+			$.ajax({
+			    url: "http://localhost:9999",
+			    success: function(result) {
+					console.log(typeof result);
+					let mydata = JSON.parse(result);
+					console.log(mydata);
+					for(let i = 0; i < mydata.length; i++) {
+						img[i].src = mydata[i].pic;
+						title[i].innerHTML = mydata[i].title;
+						description[i].innerHTML = mydata[i].description;
+						current[i].innerHTML = mydata[i].current;
+						old[i].innerHTML = mydata[i].old;
+					}
+					
+			    },
+			    fail: function(err) {
+			        console.error(err);
+			    }
+			})
+		})
+       
+
+    </script>
+
+</body>
+</html>

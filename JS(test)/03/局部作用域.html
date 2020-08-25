@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			var b=100;//函数外部定义的变量就是全局变量
+			function f1() {
+				var a=100;//函数内部定义的变量就是局部变量
+				console.log(a)
+			}
+			f1()
+			
+			function f2 (x,y) {
+				console.log(x,y)
+			}
+			f2(100,200)
+			// console.log(a)
+			
+			this.s=101;
+			window.name="雷霆嘎嘎"
+			this.f=false;
+			function f3() {
+				console.log(s , name,f)
+			}
+			f3()
+		</script>
+	</body>
+</html>

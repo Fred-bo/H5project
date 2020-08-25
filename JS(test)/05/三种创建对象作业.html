@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+		1.	var obj = {
+				name: "帅哥",
+				action: function(word) {
+					alert("H5前端")
+				}
+			}
+			obj.action()
+			
+		2.	function f1(){
+			var obj=new Object();
+			obj.name="帅哥";
+			obj.action=function(){
+				alert("H5前端");			
+			}
+			return obj;
+			}
+			f1().action()
+			
+			
+		3.	function Person(name){
+				this.name=name;
+				this.action=function(){
+					alert("H5前端");
+				}
+			}
+			var p1=new Person("帅哥");
+			console.log(p1)
+			p1.action();
+		</script>
+	</body>
+</html>

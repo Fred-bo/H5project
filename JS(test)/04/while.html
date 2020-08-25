@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			function f1() {
+				var a = 2,
+					sum = 0;
+				while (a <= 200) {
+					if (a % 2 == 0) {
+						sum += a;
+					}
+					a++;
+				}
+				console.log(sum)
+			}
+			f1()
+			function f2() {
+				var i=2,sum=0;
+				do{
+					if(i%2==0) {
+						sum+=i;
+					}
+					i++;
+				}while (i<=200)
+				console.log(sum);			
+			}
+			f2()
+		</script>
+	</body>
+</html>

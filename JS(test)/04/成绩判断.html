@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			function gradeJudge() {
+				var grade = prompt("请输入学生成绩")
+				if (grade > 90 && grade <= 100) {
+					alert("优秀")
+				} else if (grade > 80 && grade <= 90) {
+					alert("良好")
+				}else if(grade > 70 && grade <= 79){
+					alert("一般")
+				}else if(grade >= 60 && grade <= 69){
+					alert("及格")
+				}else if(grade<0 ||grade>100) {
+					alert("您输入的成绩有误")
+				}else{
+					alert("不及格")
+				}
+			}
+			gradeJudge()
+		</script>
+	</body>
+</html>

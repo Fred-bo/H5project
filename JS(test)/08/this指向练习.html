@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<script type="text/javascript">
+		
+			/* var obj = {
+				a: 10,
+				b: this.a + 10,
+				fn: function() {
+					return this.a;
+				}
+			}
+			console.log(obj.b);
+			console.log(obj.fn()); */
+	
+
+		
+		/* 	var a = 20;
+			var obj = {
+				a: 10,
+				getA: function() {
+					return this.a;
+				}
+			}
+			console.log(obj.getA());
+			var test = obj.getA;
+			console.log(test()); */
+		
+		/* 
+		var a= 5;
+		function fn1() {
+			var a =6;
+			console.log(a);
+			console.log(this.a);
+		}
+		
+		function fn2(fn) {
+			var a=7;
+			fn();
+		}
+		var obj ={
+			a:8,
+			getA:fn1
+		}
+		fn2(obj.getA); */
+		/* 
+		function fn() {
+			'use strict';
+			var a=1;
+			var obj ={
+				a:10,
+				c:this.a + 20
+			}
+			return obj.c;
+		}
+		console.log(fn()); */
+		
+		
+		/* function Person(name,age){
+			this.name = name;
+			this.age = age;
+			console.log(this);
+		}
+		
+		Person.prototype.getName=function () {
+			console.log(this);
+		};
+		var p1 =new Person("test",18);
+		p1.getName(); */
+		
+		
+		/* var obj = {
+			foo:"test",
+			fn:function() {
+				var mine=this;
+				console.log(this.foo);
+				console.log(mine.foo);
+				
+				(function() {
+					console.log(this.foo);
+					console.log(mine.foo);
+				}) ();
+			}
+		};
+		obj.fn(); */
+		
+		
+		/* function foo() {
+			console.log(this.a);
+		}
+		var a=2;
+		var o={
+			a:3,
+			foo:foo
+		};
+		
+		var p= {
+			a:4
+		};
+		o.foo();//3
+		(p.foo = o.foo)();//2
+		
+		p.foo = o.foo;
+		p.foo();//4 */
+		
+		/* 
+		function foo() {
+			console.log(this.a);
+		}
+		
+		var obj1= {
+			a:3,
+			foo:foo
+		};
+		
+		var obj2 = {
+			a:5,
+			foo:foo
+		};
+		
+		obj1.foo();//3
+		obj2.foo();//5
+		
+		obj1.foo.call(obj2);//5
+		obj2.foo.call(obj1);//3 */
+		
+		/* function test(arg) {
+			this.x = arg;
+			return this;
+		}
+		
+		var x = test(5);
+		var y = test(6);
+		console.log(x.x);
+		console.log(y.x);//6 */
+		
+		/* var obj = {
+			data:[1,2,3,4,5],
+			data2:[1,2,3,4,5],
+			fn:function() {
+				console.log("--test--")
+				console.log(this);
+				return this.data.map(function(item) {
+					console.log(this);
+					return item*2;
+				});
+			},
+			fn2:function() {
+				console.log("--test2--")
+				console.log(this);
+				return this.data2.map(item=>{
+					console.log(this);
+					return item*2;
+				});
+			}
+		};
+		obj.fn(); */
+		// console.log(obj.fn())
+		// obj.fn2();
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+	</script>
+	<body>
+	</body>
+</html>

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		
+		<style type="text/css">
+			* {
+				margin: 0;
+				padding: 0;
+			}
+			ul {
+				width: 120px;
+				margin-left: 200px;
+				margin-top: 50px;
+			}
+			
+			li {
+				list-style: none;
+				background-color: #2577e3;
+				color: #fff;
+				padding: 0 20px 0 15px;
+			}
+			p {
+				margin: 0;
+				border-bottom: 1px dashed #fff;
+				padding: 10px 0;
+			}
+			li:last-of-type p {
+				border: none;
+			}
+			
+			li:first-of-type {
+				border-left: 4px solid #ff9915;
+				background-color: #fff;
+				color: #2577e3;
+			}
+			
+		</style>
+		
+	</head>
+	<body>
+		<ul>
+			<li>
+				<p>酒店</p>
+			</li>
+			<li>
+				<p>机票</p>
+			</li>
+			<li>
+				<p>旅游</p>
+			</li>
+			<li>
+				<p>跟团游</p>
+			</li>
+			<li>
+				<p>打包订</p>
+			</li>
+			<li>
+				<p>火车</p>
+			</li>
+			<li>
+				<p>用车</p>
+			</li>
+		</ul>
+		
+		
+		<script type="text/javascript">
+			
+			let list = document.getElementsByTagName("li");
+			for(let i = 0; i < list.length; i++) {
+				list[i].onclick = function() {
+					
+					// 先清除所有元素的样式
+					for(let j = 0; j < list.length; j++) {
+						list[j].style.backgroundColor = "#2577E3";
+						list[j].style.color = "#fff";
+						list[j].style.border = "none";
+					}
+					
+					// 再设置被点击项元素的样式
+					this.style.backgroundColor = "#fff";
+					this.style.color = "#2577E3";
+					this.style.borderLeft = "4px solid #ff9915";
+					
+					
+					
+					// 排他设计
+					// 给所有的li元素中的p元素设置底边框
+					let child = list[i].parentElement.children;
+					for(let a = 0; a < child.length - 1; a++) {
+						child[a].firstElementChild.style.borderBottom = "1px dashed #fff";
+					}
+					
+					// 取出被点击项的上一个元素的底边框
+					// this表示当前点击的li元素
+					let pre = list[i].previousElementSibling;
+					if(pre != null) {
+						pre.firstElementChild.style.border = "none";
+					}
+					
+				}
+			}
+			
+			
+		</script>
+	</body>
+</html>

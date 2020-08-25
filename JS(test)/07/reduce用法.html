@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>对象里的数值求和</title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			var arr=[
+				{
+					name:"笔记本电脑",price:4999
+				},
+				{
+					name:"iPhone11",price:7999
+				},
+				{
+					name:"荣耀手环",price:299
+				}
+			]
+			var total = 0;
+			for(var j=0;j<arr.length;j++){
+				total +=arr[j].price;
+			}
+			console.log(total);
+			var m=arr.reduce(function(pre,next){
+				return pre.price + next.price;
+			},0);
+			console.log(m)
+			
+		</script>
+	</body>
+</html>

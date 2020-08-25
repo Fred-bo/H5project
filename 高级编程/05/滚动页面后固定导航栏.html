@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			.mynav {
+				width: 100%;
+				height: 0;
+				border: 2px solid lightcoral;
+				transition: height .5s;
+				background-color: red;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="mynav"></div>
+		<header style="height: 200px;background-color: lavenderblush;"></header>
+		<nav style="height: 100px;background-color: lightblue;"></nav>
+		<aside style="height: 120px;background-color: green;"></aside>
+		<section style="height: 700px;background-color: #00FFFF;"></section>
+		<article style="height: 300px;background-color: palegoldenrod;"></article>
+		<footer style="height: 200px;background-color: black;"></footer>
+	</body>
+	<script type="text/javascript">
+		let mynav = document.querySelector(".mynav")
+		document.addEventListener("scroll", function(e) {
+			// window.pageYOffset  IE9+
+			// document.documentElement.scrollTop 有DTD声明的  XHTML1.0  html4.0
+			// document.body.scrollTop 没有使用DTD声明的 HTML5
+			let top = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop
+			if (top > 300) {
+				mynav.style.position = "fixed"
+				mynav.style.left = "0"
+				mynav.style.top = "0"
+				mynav.style.height = "80px";
+
+			} else {
+				mynav.style.position = "static"
+				mynav.style.height="0"
+			}
+		})
+	</script>
+</html>

@@ -1,0 +1,79 @@
+@import "color";
+@import  "font";
+@mixin center {
+	width: 1200px;
+	margin: 0 auto;
+}
+@mixin float($params) {
+	float: $params;
+}
+
+@mixin listyle {
+	list-style: none;
+	display: inline-block;
+	margin: 0 10px;
+	line-height: 40px;
+}
+
+@mixin A($basecolor,$hovercolor,$font) {
+	color:$basecolor;
+	font-size: $font;
+	text-decoration: none;
+	&:hover{
+		color:$hovercolor;
+	} 
+}
+*{
+	margin: 0;
+	padding: 0;
+}
+.header{
+	height: 40px;
+	background-color: $bg333;
+	div{
+		@include center;
+	}
+	.fl{
+		@include float(left);
+	}
+	.fr{
+		@include float(right);
+	}
+	li{
+		@include listyle;
+		a{
+			@include A($fontColor,$hoverColor,$font12);
+		}
+	}	
+}
+
+.mynav{
+	height: 80px;
+	line-height: 80px;
+	@include center
+	li{
+		@include listyle;
+		a{
+			@include A($bg333,mainColor,$font16)
+		}
+	}
+
+}
+
+.main{
+	height: 800px;
+	@include center;
+	border: 1px solid lightcoral;
+	display: flex;
+	flex-wrap: wrap;
+}
+
+
+.phone{
+	width: 238px;
+	height: 300px;
+	border: 1px solid lightblue;
+	&:hover {
+		box-shadow: ;
+	}
+}

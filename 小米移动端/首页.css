@@ -1,0 +1,101 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-size: 0.32rem;
+}
+a {
+  text-decoration: none;
+}
+i {
+  font-style: normal;
+}
+ul {
+  list-style: none;
+}
+div {
+  box-sizing: border-box;
+}
+/*start logn search wode */
+.top-nav {
+  width: 100vw;
+  background-color: #f2f2f2;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+.logn-search-wode-icon {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.06rem 0.3rem;
+}
+.search-btn {
+  width: 5.4rem;
+  height: 0.66rem;
+  background-color: #fff;
+  border: 0.02rem solid #ccc;
+  font-size: 0.36rem;
+  color: #e9e9e9;
+  line-height: 0.66rem;
+  padding-left: 0.2rem;
+}
+.search-btn span {
+  font-size: 0.32rem;
+}
+.logn-img {
+  width: 0.5rem;
+  height: 0.33rem;
+}
+.private {
+  font-size: 0.48rem;
+}
+/*end logn search wode */
+/*start top-nav-ul */
+.top-nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 0.3rem;
+  font-size: 0.27rem;
+  background-color: #f2f2f2;
+  color: #747474;
+}
+.nav-con {
+  width: 6.28rem;
+  overflow: auto;
+}
+/* 去掉overflow滚动条样式 */
+.nav-con::-webkit-scrollbar {
+  display: none;
+}
+.nav-ul li {
+  padding: 0.12rem 0;
+  border-bottom: 0.04rem solid transparent;
+}
+.nav-ul li:hover {
+  border-bottom: 0.04rem solid #ed5b00;
+}
+.nav-ul .active {
+  border-bottom: 0.04rem solid #ed5b00;
+}
+.top-nav-container .nav-ul {
+  width: 7.65rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.arrow-down {
+  margin-right: -0.2rem;
+}
+/*end top-nav-ul */
+/* swiper */
+.swiper {
+  margin-top: 1.412rem;
+}
+.swiper-img {
+  width: 100vw;
+}
+/*end swiper */

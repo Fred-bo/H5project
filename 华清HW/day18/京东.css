@@ -1,0 +1,111 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
+/* 灰色头部分 */
+.nav {
+	width: 1024px;
+	height: 30px;
+	line-height: 30px;
+	border-bottom: 1px solid #ddd;
+	background-color: #e3e4e5;
+}
+
+.nav ul {
+	margin: 0 15%;
+}
+
+.nav ul li {
+	list-style: none;
+	color: #999;
+	float: left;
+
+}
+
+.nav a {
+	padding: 0 5px;
+}
+
+a {
+	text-decoration: none;
+	color: #999;
+
+}
+
+.red {
+	color: red;
+}
+
+
+/* 搜索框 */
+.search {
+	width: 1024px;
+	height: 100px;
+	background-color: #ADD8E6;
+	position: fixed;
+	top: 31px;
+	z-index: 10;
+}
+
+.logo {
+	width: 100px;
+	height: 100px;
+	background-position: -25px -8px;
+	background-image: url(../img/girl.png);
+	background-repeat: no-repeat;
+	position: fixed;
+	left: 70px;
+	overflow: hidden;
+}
+
+/* inner部分 */
+.inner {
+	width: 1024px;
+	height: 1024px;
+	background-color: rgb(244, 244, 244);
+}
+
+.left {
+	padding-top: 5px;
+}
+
+.inner .left li {
+	width: 100px;
+	list-style-type: none;
+	font-size: 14px;
+	color: #333;
+	background-color: #fefefe;
+	padding-left: 10px;
+	position: relative;
+	left: 150px;
+	top: 107px;
+}
+
+.pic {
+	width: 550px;
+	height: 600px;
+	background-image: url(../img/girl.jpg);
+	background-repeat: no-repeat;
+	background-position: left 0;
+	position: relative;
+	left: 269px;
+	top: -137px;
+}
+
+.right ul {
+	position: fixed;
+	font-size: 14px;
+	color: #333;
+	text-align: center;
+	overflow: hidden;
+	top: 35%;
+	left: 60%;
+}
+
+.right ul li {
+	width: 35px;
+	height: 30px;
+	line-height: 15px;
+	padding-bottom: 15px;
+}

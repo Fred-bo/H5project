@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+   <script>
+       	function Person() {
+	}
+	var p = new Person();
+	//方法才有prototype,普通对象无prototype
+	console.log(Person.prototype); // Object{} 
+	console.log(p.prototype); // undifined
+	
+	//任何对象都是有构造函数的,Person这种方法的构造函数是Function。
+	//备注:constructor很容易被改变，一般不用它，此处只是打印下列对象的构造函数是什么。
+	console.log(p.constructor); //function Person(){}  
+	console.log(Person.constructor); //function Function(){} 
+	console.log({}.constructor); // function Object(){}
+	console.log(Object.constructor); // function Function() {}
+	console.log([].constructor);  //function Array(){} 
+   </script> 
+</body>
+</html>

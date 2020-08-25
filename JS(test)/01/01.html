@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>输出数据到控制台和事件三要素</title>
+    <script src="01.js"></script>
+    <style>
+        .mydiv {
+            width: 50px;
+            height: 50px;
+            background-color: black;
+            color: aqua;
+            font-weight: bolder;
+            line-height: 50px;
+            text-align: center;
+            cursor: pointer;
+        }
+        .light {
+            width: 200px;
+            height: 200px;
+            border-radius: 100px;
+            background-color: black;
+        }
+    </style>
+</head>
+<body>
+    <div class="mydiv">你真棒</div>
+    <div class="light"></div>
+    <script>
+        // console.log('你厉害啊');
+        // console.log(1,2,3,'你厉害啊');
+        // alert('弹出个小窗口');
+        // console.log(confirm('确定么'));
+        // console.log(confirm('再次确定'));
+        document.querySelector(".mydiv").onclick=function(){
+            console.log("1");
+        document.querySelector('.light').style.backgroundColor = 'yellow';
+        document.querySelector('.light').style.height ="100px";
+        document.querySelector('.light').style.width ="100px";
+        }
+         
+        
+    </script>
+    
+</body>
+</html>

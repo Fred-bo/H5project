@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			while (true) {
+				var arr=[];
+				var str = prompt("请输入任意字符")
+				if(str=="-1"){		
+					break;
+				}else{
+					arr.unshift(str);
+				}
+				arr.shift();
+				arr.splice(0,1,"hello");
+			}
+				document.write(arr)
+		</script>
+	</body>
+</html>

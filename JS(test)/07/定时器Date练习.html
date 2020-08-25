@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<h1></h1>
+		<script type="text/javascript">
+			var h1= document.querySelector("h1");
+			function count(){
+				var end=new Date("2020-9-1 00:00:00");
+				 
+				setInterval(function(){
+					var start=new Date();
+					var time = end-start;
+					
+					var day = Math.floor(time / 1000 /60/60/24);
+					var hour=Math.floor(time /1000/60/60%24);
+					var min =Math.floor(time/1000/60%60);
+					var second = Math.floor(time/1000%60);
+					
+					h1.innerHTML = `剩余时间：${day}天-${hour<10 ? '0'+hour:hour}:${min<10 ? '0'+min:min}:${second<10 ? '0'+second:second}`
+				},1000)
+			}
+			count();
+		</script>
+	</body>
+</html>

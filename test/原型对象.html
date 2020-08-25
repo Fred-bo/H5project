@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function animal(eat,bark){
+            this.eat=eat;
+            this.bark=bark;
+        }
+        function test(){
+            var an1=new animal("吃肉","嗷嗷")//动物里的食肉动物
+            var an2=new animal("吃草","咩咩")//食草动物
+            animal.prototype.drink="喝水"//动物都要喝水，给所有动物添加喝水属性
+            console.log(an1.drink)//喝水
+            console.log(an2.drink)//喝水
+
+        }
+        test();
+    </script>
+</body>
+</html>

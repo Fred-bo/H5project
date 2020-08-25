@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="noval.css" />
+	</head>
+	<body>
+		<div class="container">
+			<ul class="fixed-set">
+				<li>目录</li>
+				<li class="setBtn">设置</li>
+				<li>手机</li>
+				<li>书架</li>
+				<li>书页</li>
+				<li>游戏</li>
+			</ul>
+
+			<div class="set">
+				<div class="color">
+					<span>阅读主题</span>
+					<ul>
+						<li class="li" style="background-color: #f7f7f7;"></li>
+						<li class="li" style="background-color: #f6f5ed;"></li>
+						<li class="li" style="background-color: #e6f3e9;"></li>
+						<li class="li" style="background-color: #f2ecd4;"></li>
+						<li class="li" style="background-color: #434348;"></li>
+					</ul>
+				</div>
+				<div class="family">
+					<p>正文字体</p>
+					<span>雅黑</span>
+					<span>宋体</span>
+					<span>楷书</span>
+				</div>
+
+				<div class="font">
+					<p>字体大小</p>
+					<span>A-</span>
+					<span>18</span>
+					<span>A+</span>
+				</div>
+			</div>
+
+			<article>
+				盗墓不是请客吃饭，不是做文章，不是绘画绣花，不能那样雅致，那样从容不
+				迫，文质彬彬，那样温良恭俭让，
+				盗墓是一门技术，一门进行破坏的技术。古代贵族们
+				建造坟墓的时候，一定是想方设法的防止被盗， 故此无所不用其极，在墓中设置种种
+				机关暗器，消息埋伏，有巨石、流沙、毒箭、毒虫、陷坑等等数不胜数。到了明代，
+				受到西洋奇技淫巧的影响，一些大墓甚至用到了 西洋的八宝转心机关，尤其是清代的
+				帝陵，堪称集数千年防盗技术于一体的杰作， 大军阀孙殿英想挖开东陵用里面的财宝
+				充当军饷，起动大批军队，连挖带炸用了五六天才得手，其坚固程度可想而知。盗墓
+				贼的课题就是千方百计的破解这些机关，进入墓中探宝。不过在现代，比起如何挖开
+				古墓更困难的是寻找古墓，地面上有封土堆和石碑之类明显建筑的大墓早就被人发掘
+				得差不多了，如果要找那些年深日深藏于地下，又没有任何地上标记的古墓，那就需
+				要一定的技术和特殊工具了，铁钎、洛阳铲、竹钉，钻地龙，探阴爪，黑折子等工具
+				都应运而生，还有一些高手不依赖工具，有的通过寻找古代文献中的线索寻找古墓，
+				还有极少数的一-些人掌握秘术，可以通过解读山川河流的脉象，用看风水的本领找墓
+				穴，我就是属于最后这一类的， 在我的盗墓生涯中踏遍了各地，其间经历了很多诡异
+				离奇的事迹，若是一件件的表白出来，足以让观者惊心，闻者乍舌，毕竟那些龙形虎
+				藏、揭天拔地、倒海翻江的举动，都非比寻常。
+				[ 30
+				这诸般事迹须从我祖父留下来的一-本残书《十六字阴阳风水秘术》讲起，这本残
+				书，下半本不知何故，被人硬生生的扯了去，只留下这上卷风水秘术篇，书中所述，
+
+			</article>
+		</div>
+		<script type="text/javascript">
+			let con = document.querySelector(".container")
+			let fixedset = document.querySelector(".fixed-set")
+			let setBtn = document.querySelector(".setBtn");
+			let set = document.querySelector(".set")
+			let li = document.querySelectorAll(".li")
+			let article = document.querySelector("article")
+			let family = document.querySelectorAll(".family span")
+			let font = document.querySelectorAll(".font span")
+			let colorul = document.querySelector(".color ul")
+			setBtn.addEventListener("click", colorclick);
+
+			function colorclick() {
+				setBtn.style.cssText = "width:60px;hight:60px;"
+				set.style.display = "block"
+			};
+
+
+
+			colorul.addEventListener("click", f1);
+
+			function f1(e) {
+				article.style.backgroundColor = e.target.style.backgroundColor;
+				fixedset.style.backgroundColor = e.target.style.backgroundColor;
+				setBtn.style.backgroundColor = e.target.style.backgroundColor;
+				set.style.backgroundColor = e.target.style.backgroundColor;
+				
+
+				if (e.target ==e.target.parentElement.lastElementChild && e.target.tagName=="LI") {
+					console.log(e.target.parentElement.lastElementChild)
+					article.style.color = "#fff"
+					article.style.color = "#fff"
+					fixedset.style.color = "#fff"
+					setBtn.style.color = "#fff"
+					set.style.color = "#fff"
+
+				}else{
+				article.style.color = "#000"
+				fixedset.style.color = "#000"
+				setBtn.style.color = "#000"
+				set.style.color = "#000" 
+				}
+			}
+			
+			
+			set.addEventListener("mouseleave", function() {
+				set.style.display = "none"
+				setBtn.style.cssText = "width:45px;hight:45px;"
+			})
+
+			con.addEventListener("click", f2);
+
+			function f2(e) {
+				for (let i = 0; i < family.length; i++) {
+					if (e.target == family[0]) {
+						con.style.fontFamily = e.target.innerHTML
+					} else if (e.target == family[1]) {
+						con.style.fontFamily = e.target.innerHTML
+					} else if (e.target == family[2]) {
+						con.style.fontFamily = e.target.innerHTML
+					}
+				}
+			}
+
+			con.addEventListener("click", f3);
+
+			function f3(e) {
+				if (e.target == font[0]) {
+					let f = parseInt(font[1].innerHTML)
+					console.log(f)
+					if (f == 16) {
+						f = 16;
+					} else {
+						f--;
+					}
+					article.style.fontSize = f + "px"
+					font[1].innerHTML = f++
+				} else if (e.target == font[2]) {
+					let f = parseInt(font[1].innerHTML)
+					if (f == 20) {
+						f = 20;
+					} else {
+						f++
+					}
+					article.style.fontSize = f + "px"
+					font[1].innerHTML = f++
+				}
+
+			}
+		</script>
+	</body>
+</html>

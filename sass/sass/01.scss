@@ -1,0 +1,16 @@
+$fontsize:20px;
+$mycolor:red;
+$bgcolor:#666;
+.box{
+    width: 200px;
+    height: 200px;
+    text-align: center;
+    line-height: 70px;
+    background-color: $bgcolor;
+    p{
+        font-size: $fontsize;
+        color: $mycolor;
+    }
+  
+}
+@import "02"

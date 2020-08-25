@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			var arr=["aaa","bbb","ccc","ddd","eee"]
+			var a=arr.splice(1,2)//splice返回的是一个被删除值组成的数组
+			// console.log(a,arr)
+			
+			//参数1:起始下标;参数2:删除个数;参数3及其以后:添加元素.
+			//添加元素
+			var c=arr.splice(1,0,"apple","lemon")
+			console.log(c,arr);
+		</script>
+	</body>
+</html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<canvas id="canvas" width="600px" height="600px"></canvas>
+		<script type="text/javascript">
+			var canvas=document.querySelector("#canvas")
+			var ctx=canvas.getContext("2d")
+			var deg=Math.PI/180;
+			var data=[
+				{title:"电子1",money:240},
+				{title:"电子2",money:240},
+				{title:"电子3",money:240},
+				{title:"电子4",money:240},
+				{title:"电子5",money:240},
+				{title:"电子6",money:240}
+			]
+			
+			var data2=[
+				{name:"生活服务"},
+				{name:"油盐酱醋"},
+				{name:"王者荣耀充值"},
+				{name:"吃饭开销"},
+				{name:"水电"},
+				{name:"房租"}
+			]
+			var r=200;
+			ctx.moveTo(300,300);
+			ctx.lineTo(300+r,300)
+			
+			var total=data.reduce((sum,next)=>{
+				return {money:sum.money+next.money}
+			})
+			//推导过程
+			/* var angle=data[0].money/total.money*360
+			var starAngle=0*deg
+			var endAngle=angle*deg
+			ctx.arc(300,300,200,starAngle,endAngle)
+			ctx.lineTo(300,300)
+			
+			var angle2=data[1].money/total.money*360
+			var starAngle=endAngle
+			var endAngle2=endAngle+angle2*deg
+			ctx.arc(300,300,200,starAngle,endAngle2)
+			ctx.lineTo(300,300)
+			 */
+			
+			function f1(index,endAngle){
+				if(index==data.length){
+					return
+				}else {
+					var angle=data[index].money/total.money*360*deg;
+					var start=endAngle;
+					var end=angle+endAngle;
+					ctx.arc(300,300,200,start,end);
+					ctx.lineTo(300,300);
+					var nextIndex=index+1;
+					ctx.fillStyle='#'+ Math.random().toString(16).substr(-6);
+					ctx.fill()
+					
+					ctx.stroke()
+					ctx.fillText(data2[index].name,300+270*Math.cos(endAngle+angle/2),300+270*Math.sin(endAngle+angle/2));
+					ctx.beginPath()
+					f1(nextIndex,end)
+				}
+			}
+			ctx.strokeStyle="lightblue"
+			ctx.fill()		
+			f1(0,0)
+		</script>
+	</body>
+</html>

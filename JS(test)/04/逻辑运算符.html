@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			function f1(){
+				console.log(false && "abc");"false"
+				console.log(true && "abc");"abc"
+				console.log(true || "abc");"true"
+				console.log(false || "abc");"abc"
+				console.log(false || undefined);undefined
+				console.log([] || "abc");[]
+				console.log({} || "abc");{}
+				console.log(NaN|| "abc");"abc"
+			}
+			f1()
+		</script>
+	</body>
+</html>

@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>去掉字符串首尾空格</title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			function f1(str) {
+				return str.replace(/(^\s*)|(\s*$)/g,"");
+			}
+			console.log( f1("    miao  v   "));
+		</script>
+	</body>
+</html>

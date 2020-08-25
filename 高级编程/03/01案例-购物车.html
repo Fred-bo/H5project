@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+
+		<style type="text/css">
+			table,
+			th,
+			td {
+				border: 1px solid #000;
+				border-collapse: collapse;
+			}
+
+			th,
+			td {
+				padding: 8px 15px;
+			}
+
+			img {
+				width: 80px;
+				height: 80px;
+			}
+
+			input {
+				width: 40px;
+				margin: 0 5px;
+			}
+
+			.product {
+				width: 260px;
+			}
+		</style>
+
+	</head>
+	<body>
+
+		<table>
+			<thead>
+				<th>全选</th>
+				<th>图片</th>
+				<th>商品名称</th>
+				<th>规格</th>
+				<th>单价</th>
+				<th>数量</th>
+				<th>小计</th>
+				<th>操作</th>
+			</thead>
+
+			<tbody></tbody>
+		</table>
+		
+		<button disabled>按钮</button>
+
+		<script type="text/javascript">
+			function findIndex(parent, current) {
+				let child = parent.children;
+				let index = -1;
+				for (let i = 0; i < child.length; i++) {
+					if (child[i] == current) {
+						index = i;
+						break;
+					} else {
+						index = -1;
+					}
+				}
+				return index;
+			}
+
+			// 定义商品信息
+			let goodlist = [{
+					pic: "./img/p1.jpg",
+					name: "养生堂天然维生素E软胶囊230粒（200粒+15粒*2盒或200粒+30粒1盒随机发货） ve美容（祛黄褐斑） 延缓衰老",
+					type: "维生素E230粒",
+					price: 168,
+					num: 1
+				},
+				{
+					pic: "./img/p2.jpg",
+					name: "妮佳 moony 纸尿裤XL46片（12-17kg)大号婴儿尿不湿",
+					type: "XL46",
+					price: 89,
+					num: 1
+				},
+				{
+					pic: "./img/p3.jpg",
+					name: "爱他美（Aptamil） 卓萃婴儿配方奶粉（0—6月龄，1段） 380g",
+					type: "白金版380克",
+					price: 170,
+					num: 1
+				},
+				{
+					pic: "./img/p4.jpg",
+					name: "袜子",
+					type: "1~3岁",
+					price: 25,
+					num: 1
+				}
+			];
+			
+			(function() {
+				// 渲染表格
+				for (let i = 0; i < goodlist.length; i++) {
+					let tr = document.createElement("tr");
+
+					// 全选复选框:是单独的单元格，每一行只有一个
+					let td = document.createElement("td");
+					let check = document.createElement("input");
+					check.type = "checkbox";
+					td.appendChild(check);
+					tr.appendChild(td);
+
+					// 数组中的元素是对象,所以使用for...in语句遍历键值对
+					for (let key in goodlist[i]) {
+						let td = document.createElement("td");
+
+						// 根据数据类决定使用什么元素，图片用img，链接用a...
+						if (key === "pic") { //图片标签
+							let img = document.createElement("img");
+							img.src = goodlist[i][key];
+							td.appendChild(img)
+						} else if (key === "name") { //商品名称  超链接
+							let a = document.createElement("a");
+							a.href = "#";
+							a.innerHTML = goodlist[i][key];
+							td.appendChild(a);
+							td.classList.add("product");
+						} else if (key === "type") {
+							let span = document.createElement("span");
+							span.innerHTML = goodlist[i][key];
+							td.appendChild(span);
+						} else if (key === "price") {
+							let span = document.createElement("span");
+							span.innerHTML = goodlist[i][key];
+							td.appendChild(span);
+						} else if (key === "num") {
+							// 数量减
+							let subBtn = document.createElement("button");
+							subBtn.innerHTML = "-";
+							td.appendChild(subBtn);
+							if(goodlist[i].num === 1) { //初始化时，如果商品的数量等于1，那么减号按钮禁用
+								subBtn.disabled = true;
+							}
+
+							// 显示数量
+							let input = document.createElement("input");
+							input.value = goodlist[i][key];
+							td.appendChild(input);
+
+							// 数量加
+							let addBtn = document.createElement("button");
+							addBtn.innerHTML = "+";
+							td.appendChild(addBtn);
+						}
+						tr.appendChild(td);
+					}
+
+					// 显示价格
+					let totalTd = document.createElement("td");
+					let span = document.createElement("span");
+					span.innerHTML = goodlist[i].price * goodlist[i].num;
+					span.classList.add("total");
+					totalTd.appendChild(span);
+					tr.appendChild(totalTd);
+
+					// 删除按钮
+					let delTd = document.createElement("td");
+					let delBtn = document.createElement("button");
+					delBtn.innerHTML = "删除";
+					delTd.appendChild(delBtn);
+					tr.appendChild(delTd);
+
+					document.querySelector("tbody").appendChild(tr)
+				}
+			})();
+
+
+			(function opearate() {
+				let table = document.querySelector("table");
+				table.addEventListener("click", function(event) {
+					
+					// 获取按钮上的文本   +  -  删除
+					let html = event.target.innerHTML;
+					let tbody = document.querySelector("tbody");
+					// 按钮层级一致,都在tr>td>button,找出tr元素
+					let tr = event.target.parentElement.parentElement;
+					// 获取当前tr在tbody中的下标
+					let index = findIndex(tbody, tr)
+					
+					if (html === "删除") { //删除按钮
+						// 删除tr之后,要更新数组，删除对应的数据
+						goodlist.splice(index, 1);
+						
+						// 删除整个tr元素
+						tr.remove();
+
+					} else if (html === "+") {
+						// 取出输入框中的数据,转为number类型,再加1
+						++event.target.previousElementSibling.value;
+
+						// 改变数组中的数据
+						goodlist[index].num++;
+
+						// 根据数量重新计算价格并显示
+						let total = document.querySelectorAll(".total");
+						total[index].innerHTML = goodlist[index].num * goodlist[index].price
+						
+						// 当数量大于1时,减号按钮可点击,disabled为false
+						let sub = event.target.previousElementSibling.previousElementSibling;
+						if(goodlist[index].num > 1) {
+							sub.disabled = false;
+						} 
+
+					} else if(html === "-") {
+						// 先将数量减1,再判断减号按钮是否该禁用
+						goodlist[index].num--;
+						if(goodlist[index].num <= 1) {
+							goodlist[index].num = 1;
+							event.target.disabled = true;
+						} else {
+							event.target.disabled = false;
+						}
+						
+						// 将数量重新赋值到input元素上
+						event.target.nextElementSibling.value = goodlist[index].num;
+						
+						// 根据数量重新计算价格并显示
+						let total = document.querySelectorAll(".total");
+						total[index].innerHTML = goodlist[index].num * goodlist[index].price
+					}
+				})
+			})();
+		</script>
+
+
+	</body>
+</html>

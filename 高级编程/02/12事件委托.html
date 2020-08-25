@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		
+		<ul>
+		    <li>可点击的1</li>
+		    <li>可点击的2</li>
+		    <li>可点击的3</li>
+		    <li>可点击的4</li>
+		    <li>可点击的5</li>
+		    <li>可点击的6</li>
+		    <li>可点击的7</li>
+		    <li>可点击的8</li>
+		</ul>
+		
+		<script type="text/javascript">
+			
+			// let li = document.querySelectorAll("li");
+			// for(let i = 0; i < li.length; i++) {
+			// 	li[i].onclick = function(){
+					
+			// 	}
+			// }
+			
+			// 事件函数内部,this表示绑定事件的元素对象
+			// event.target表示触发事件的元素,有可能是子元素
+			// 事件委托: 当所有子元素都需要绑定同一个事件时,将这个事件绑定到父元素上,
+			// 	只要其中的子元素被点击,那么就会触发事件,事件对象表示的该子元素对象
+			let ul = document.querySelector("ul");
+			ul.addEventListener("click", function(event) {
+				console.log(event.target); //被点击的li元素
+				console.log(this);  //绑定事件的元素 ul
+				
+				// this.children 表示ul元素内部的所有子元素li
+				for(let i = 0; i < this.children.length; i++) {
+					this.children[i].style.color = "#000";
+				}
+				event.target.style.color = "red";
+			})
+			
+		</script>
+		
+	</body>
+</html>

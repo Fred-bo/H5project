@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			//只去掉前面空格
+					
+			function f1() {
+				var reg=/^\s*/g;
+				var str="    hello    world    "
+				var m= str.replace(reg,"")
+				console.log(m)
+			}
+			f1()
+			
+			
+			//只去掉后面空格
+			function f2() {
+				var reg=/\s*$/g;
+				var str="    hello    world    ";
+				var m=str.replace(reg,"")
+				console.log(m)
+			}
+			f2();
+			
+			//只去掉中间空格
+			function f3() {
+				var reg=/(\s+\w+)(\s+)(\w+\s+)/;
+				var str="    hello    world    ";
+				var m=str.replace(reg,"$1$3")
+				console.log(m);
+			}
+			f3()
+		</script>
+	</body>
+</html>

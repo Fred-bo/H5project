@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="jd.css" />
+	</head>
+	<body>
+		<table>
+			<thead>
+				<tr class="oneTr">
+					<th>
+						<input type="checkbox" data-id="all" />
+						全选</th>
+					<th>商品</th>
+					<th>商品名称</th>
+					<th>单价</th>
+					<th>数量</th>
+					<th>小计</th>
+					<th>操作</th>
+				</tr>
+			</thead>
+			<tbody>
+
+			</tbody>
+		</table>
+		<h1></h1>
+		<script type="text/javascript">
+			function findIndex(parent, target) {
+				let child = parent.children;
+				let index = -1;
+				for (let i = 0; i < child.length; i++) {
+					if (child[i] == target) {
+						index = i;
+						break;
+					}else{
+						index=-1
+					}
+				}
+				return index;
+			}
+
+			let jdList = [{
+					product: "./img/01.jpg.webp",
+					name: "衣裤",
+					price: 58,
+					num: 1
+				},
+				{
+					product: "./img/02.jpg.webp",
+					name: "手表",
+					price: 860,
+					num: 1
+				},
+				{
+					product: "./img/03.jpg.webp",
+					name: "运动鞋",
+					price: 199,
+					num: 1
+				}
+			];
+
+			(function() {
+				for (let i = 0; i < jdList.length; i++) {
+					let tr = document.createElement("tr");
+
+					let td = document.createElement("td");
+					let check = document.createElement("input");
+					check.type = "checkbox";
+					check.setAttribute("data-id", "single");
+					td.appendChild(check);
+					tr.appendChild(td);
+					for (let key in jdList[i]) {
+						let td = document.createElement("td");
+
+						if (key === "product") {
+							let img = document.createElement("img");
+							img.src = jdList[i][key];
+							td.appendChild(img);
+						} else if (key === "name") {
+							let a = document.createElement("a");
+							a.href = "#";
+							a.innerHTML = jdList[i][key];
+							td.appendChild(a);
+							td.classList.add("product")
+						} else if (key === "num") {
+							let btnReduce = document.createElement("button");
+							btnReduce.innerHTML = "-";
+							if (jdList[i].num === 1) {
+								btnReduce.disabled = true;
+							}
+							td.appendChild(btnReduce);
+							let input = document.createElement("input");
+							input.value = jdList[i][key];
+							td.appendChild(input)
+							let btnAdd = document.createElement("button");
+							btnAdd.innerHTML = "+";
+							td.appendChild(btnAdd)
+						} else {
+							td.innerHTML = jdList[i][key];
+						}
+						tr.appendChild(td);;
+					}
+					//小计
+					let totalTd = document.createElement("td");
+					let span = document.createElement("span");
+					span.innerHTML = jdList[i].price * jdList[i].num;
+					span.classList.add("total");
+					totalTd.appendChild(span);
+					tr.appendChild(totalTd);
+
+					//删除
+					let del = document.createElement("td");
+					let delBtn = document.createElement("button");
+					delBtn.innerHTML = "删除";
+					del.appendChild(delBtn);
+					tr.appendChild(del);
+					document.querySelector("tbody").appendChild(tr);
+				}
+			})();
+			//加减，删除操作
+			(function() {
+				let table = document.querySelector("table")
+				table.addEventListener("click", function(e) {
+					let html = e.target.innerHTML;
+					let tbody = document.querySelector("tbody");
+					let tr = e.target.parentElement.parentElement;
+					let index = findIndex(tbody, tr)
+					if (html === "删除") {
+						jdList.splice(index, 1);
+						tr.remove();
+
+					} else if (html == "+") {
+						++e.target.previousElementSibling.value;
+
+						jdList[index].num++;
+						let total = document.querySelectorAll(".total")
+						total[index].innerHTML = jdList[index].num * jdList[index].price
+
+						let sub = e.target.previousElementSibling.previousElementSibling;
+						if (jdList[index].num > 1) {
+							sub.disabled = false;
+						}
+
+					} else if (html === "-") {
+						// 先将数量减1,再判断减号按钮是否该禁用
+						jdList[index].num--;
+						if (jdList[index].num <= 1) {
+							jdList[index].num = 1;
+							e.target.disabled = true;
+						} else {
+							e.target.disabled = false;
+						}
+
+						// 将数量重新赋值到input元素上
+						e.target.nextElementSibling.value = jdList[index].num;
+
+						// 根据数量重新计算价格并显示
+						let total = document.querySelectorAll(".total");
+						total[index].innerHTML = jdList[index].num * jdList[index].price
+
+					}
+				})
+			})();
+
+			// 全选
+			(function() {
+				let table = document.querySelector("table");
+				table.addEventListener("click", function(e) {
+					console.log(e.target)
+					let id = e.target.dataset.id;
+					let all = document.querySelector("thead input");
+					let list = document.querySelectorAll("tbody input[type='checkbox']")
+					if (id === "all") { //全选按钮
+						console.log(list);
+						for (let i = 0; i < list.length; i++) {
+							list[i].checked = e.target.checked;
+						}
+					} else if (id === "single") { //每一行的复选框
+						let flag = true;
+						if (e.target.checked) { //当前项选中，判断其他有没有都选中
+							for (let i = 0; i < list.length; i++) {
+								if (!list[i].checked) {
+									flag = false;
+									break;
+								}
+							}
+						} else {
+							flag = false;
+						}
+						all.checked = flag;
+					}
+					calculater(list)
+				})
+			})();
+
+			function calculater(list) {
+				let sum = 0;
+				for (let i = 0; i < jdList.length; i++) {
+					if (list[i].checked) {
+						sum += jdList[i].num * jdList[i].price
+					}
+				}
+				document.querySelector("h1").innerHTML = "总价:" + sum;
+			}
+		</script>
+	</body>
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script src="https://cdn.bootcdn.net/ajax/libs/jquery/2.0.0/jquery.js"></script>
+	</head>
+	<body>
+		<button type="button">按钮</button>
+		<script type="text/javascript">
+			$(function(){
+				let arr=["hello","world"]
+				$("button").click(arr,function(e){
+					for(let i=0;i<e.data.length;i++){
+						document.body.innerHTML+=`<span>${e.data[i]}<span/><br/>`
+					}
+				})
+			})
+		</script>
+	</body>
+</html>

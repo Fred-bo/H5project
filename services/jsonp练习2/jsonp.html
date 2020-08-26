@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 定义jsonp函数，data就是服务器响应的数据
+        function jsonp(data){
+            console.log(data);
+        }
+        
+    </script>
+    <script src="http://localhost:8888?callback=jsonp"></script>
+    <!-- 通过script src来访问服务器地址，并通过callback参数来回
+调函数获取响应的json数据 -->
+
+</body>
+</html>

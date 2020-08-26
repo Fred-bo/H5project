@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="getjson()">你干哈</button>
+    <script>
+
+        function fn(data){
+            console.log(data);
+        }
+
+        function getjson(){
+            let sc=document.createElement("script");
+            sc.src="http://localhost:9999/test.jsonp?callback=fn";
+            document.body.appendChild(sc)
+
+        }
+    </script>
+      <!-- <script src="http://localhost:9999/test.jsonp"></script>  -->
+           <!-- <script src="test.js"></script> -->
+</body>
+</html>

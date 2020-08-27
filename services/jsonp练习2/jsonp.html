@@ -6,14 +6,22 @@
     <title>Document</title>
 </head>
 <body>
+    <button onclick="fn()">按钮</button>
     <script>
         // 定义jsonp函数，data就是服务器响应的数据
         function jsonp(data){
             console.log(data);
         }
         
+        function fn(){
+            let sc=document.createElement("script");
+            sc.src="http://localhost:8888/test.jsonp?callback=jsonp"
+            document.body.appendChild(sc);
+        }
+       
+
     </script>
-    <script src="http://localhost:8888?callback=jsonp"></script>
+    <!-- <script src="http://localhost:8888/test.jsonp?callback=jsonp"></script> -->
     <!-- 通过script src来访问服务器地址，并通过callback参数来回
 调函数获取响应的json数据 -->
 

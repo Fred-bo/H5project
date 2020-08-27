@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button onclick="fn()">ajax GET请求</button>
+    <button onclick="fn2()">ajax POST请求</button>
+    <script>
+        function fn() {
+            console.log("fn")
+            let xhr = new XMLHttpRequest() || ActiveXObject("Microsoft.XMLHTTP");
+            xhr.open("GET", "http://localhost:9999/test.jsonp?name=aa&age=18")
+            xhr.send();
+
+            xhr.onreadystatechange = () => {
+                if (xhr.readyState == 4 && xhr.status == 200) {
+                    let obj = JSON.parse(xhr.responseText)
+                    console.log(obj);
+                }
+            }
+        }
+
+        function fn2() {
+            let xhr = new XMLHttpRequest() || ActiveXObject("Microsoft.XMLHTTP");
+            xhr.open("POST", "http://localhost:9999/post")
+            xhr.send(JSON.stringify({ name: "西帕", age: 18 }));
+
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState == 4 && xhr.status == 200) {
+                    console.log(xhr.responseText);//没反应？？？
+                }
+            }
+        }
+    </script>
+</body>
+
+</html>

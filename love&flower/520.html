@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<title></title>
+	<link rel="stylesheet" href="520.css">
+	<link rel="shortcut icon" href="img/love.jpg" type="image/x-icon">
+</head>
+
+<body>
+	<img class="em" src="img/shuang.jpg" alt="">
+	<img class="en" src="img/3xin.png" alt="">
+	<div class="home">
+		<p class="love">爱你</p>
+		<img src="img/flower.jpg" alt="">
+		<p class="time">永远</p>
+	</div>
+	<span class="f">笑颜如 "花" 美</span>
+
+
+	<script>
+		
+
+		function color16() {//十六进制颜色随机
+			var r = Math.floor(Math.random() * 256);
+			var g = Math.floor(Math.random() * 256);
+			var b = Math.floor(Math.random() * 256);
+			var color = '#' + r.toString(16) + g.toString(16) + b.toString(16);
+			return color;
+		}
+
+		let love = document.querySelector(".love")
+		let time = document.querySelector(".time")
+		let f = document.querySelector(".f")
+		setInterval(() => {
+			love.style.color = color16()
+			time.style.color = color16()
+			f.style.color = color16()
+		}, 500)
+
+
+		
+		
+		var size = 20;
+		var falg = 1;
+		function getSize() {
+			if (falg == 1) {
+				size = size + 1;
+				if (size == 60)
+					falg = 0;
+				return size;
+			}
+			if (falg == 0) {
+				size = size - 1;
+				if (size == 20)
+					falg = 1;
+				return size;
+			}
+		}
+
+		// var m=document.querySelector(".love")
+		var n=document.querySelector(".time")
+		// var f=document.querySelector(".f")
+		var p=document.querySelectorAll("p")
+		n.className=".time"
+		// n.style.left="328px"
+		let i=0;
+		setInterval(()=>{
+			if(i%2==0){
+				for(let i=0;i<p.length;i++){
+					p[i].className="big"
+					// f.className"big"
+				}		
+				
+			}else{
+				for(let i=0;i<p.length;i++){
+					p[i].className="small"
+					// f.className"big"
+				}
+			}
+			i++
+		},500)
+		
+	</script>
+
+</body>
+
+</html>

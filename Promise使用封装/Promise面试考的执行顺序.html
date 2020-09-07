@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <script>
+        var p=new Promise((c1,c2)=>{
+            //在promise对象内部写的代码是同步的，在外部用then方法获取数据的时候是异步的
+
+            setTimeout(()=>{
+                var a=5
+                c1(a)
+            },1000)
+
+            for(var i=0;i<10;i++){}
+            console.log(2);
+            // c1(i)
+        })
+
+        //在js内部就是正常按顺序执行，只有系统给的方法会有异步操作
+        console.log(p) //pendding
+        console.log(4)
+        console.log(p) //pendding
+
+        p.then((data)=>{console.log(data)}).catch((data)=>{console.log(data)})//这里出现异步，因为有个等待data传入的时间，这个时间会接着往下执行
+
+        console.log(3)
+
+
+        //得到结果是 ： 2 ，4 ，3 ，10
+            
+      
+    </script>
+
+
+
+</body>
+</html>

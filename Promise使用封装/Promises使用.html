@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var p = new Promise((c1, c2) => {
+            setTimeout(() => {
+                var a = 100
+                c2(a)//如果获取c2的错误数据，用then方法取会抛出错误，用catch方法获取会正常
+            }, 3000)
+
+        })
+        console.log(p)
+        p.then((data) => {
+            console.log(data, 1)
+        }, (data) => {
+            console.log(data, 2)
+        })
+
+        setTimeout(() => {
+            console.log(p)
+        }, 5000)
+
+        p.catch((data) => {
+            console.log(data, 2)
+        })
+
+        p.then((data) => { console.log(data, 1) }).catch((data) => {
+            console.log(data)
+        })
+        //因为then方法返回的是一个Promise对象   
+    </script>
+</body>
+
+</html>

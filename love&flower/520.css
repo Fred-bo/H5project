@@ -1,0 +1,49 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+
+body{
+    background: rgb(240, 208, 240);
+}
+
+.home{
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%); 
+    /* //top,left会超出中心点，而translate的-50%会在宽，高上各减少img的50%，从而达到居中的目的； */
+   
+}
+
+
+
+.time{
+    position: absolute;
+    left: 328px;
+}
+
+.en{
+    position: absolute;
+    left: 460px;
+    top: 40px;
+    /* z-index: 20; */
+}
+.big{
+    font-size: 25px;
+}
+
+.small{
+    font-size: 20px;
+}
+.em {
+    position: absolute;
+    left: 750px;
+    top: 247px;
+}
+
+.f{
+    position: absolute;
+    left: 1064px;
+    top:210px
+}

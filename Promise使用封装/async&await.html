@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //工具代码
+        function myaxios(url) {
+            var p = new Promise((reslove,reject) => {
+                let xhr = new XMLHttpRequest()
+                xhr.open("GET", url, true)
+                xhr.send()
+                xhr.onreadystatechange = () => {
+                    if (this.readystate == 4) {
+                        if (this.status == 200) {
+                            reslove(this.responseText)
+                        }else if(this.status==404){
+                            reject(this.responseText)
+                        }
+                    }
+                }
+            })
+            return p
+        }
+
+
+       //业务代码
+       var url="http://192.168.3.130:9999/520.html"
+       var p1=myaxios(url)
+       p1.then((data)=>{
+        console.log(data)
+       })
+
+
+    </script>
+</body>
+
+</html>
